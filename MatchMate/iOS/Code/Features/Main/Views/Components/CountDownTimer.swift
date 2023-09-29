@@ -11,7 +11,7 @@ struct CountDownTimer: View {
     
     // Mark: - Variables
     
-    @Binding var timeRemaining: Int
+    @State var timeRemaining: Int = 15
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
 
@@ -27,18 +27,11 @@ struct CountDownTimer: View {
                        }
                    }
     }
-    func startTimer() {
-           Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-               if self.timeRemaining > 0 {
-                   self.timeRemaining -= 1
-               } else {
-                   timer.invalidate()
-               }
-           }
-       }
+    
     
 }
 
 #Preview {
-    CountDownTimer(timeRemaining: .constant(15))
+    CountDownTimer()
+    
 }

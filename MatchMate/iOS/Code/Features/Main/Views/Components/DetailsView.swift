@@ -25,7 +25,7 @@ struct DetailsView: View {
                    
                     
                     
-                CountDownTimer(timeRemaining: $timeRemaining)
+                CountDownTimer()
                
                     .onAppear {
                         startTimer()
