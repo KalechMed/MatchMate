@@ -8,45 +8,20 @@
 import SwiftUI
 
 class CardViewModel: ObservableObject {
-    @Published var cardPairs: [Card] = []
-    
-  
-    init() {
-        generateRandomCardPairs()
-    }
+    @Published var randomizedList: [String] = []
     
    
+    
     func generateRandomCardPairs() {
-        let leftSideImages: [Image] = [
-            Image("leftBear"),
-            Image("leftChick"),
-            Image("leftFrog"),
-            Image("leftkoala"),
-            Image("leftMonkey"),
-            Image("leftPig")
-        ]
-        let rightSideImages: [Image] = [
-            Image("rightBear"),
-            Image("rightChick"),
-            Image("rightFrog"),
-            Image("rightkoala"),
-            Image("rightMonkey"),
-            Image("rightPig")
-        ]
-        
-        var pairs: [Card] = []
-        
-        for i in 0..<leftSideImages.count {
-            let leftImage = leftSideImages[i]
-            let rightImage = rightSideImages[i]
-            let card = Card(leftSideImage: leftImage, rightSideImage: rightImage)
-            pairs.append(card)
+        let leftsideImages = ["leftBear", "leftChick", "leftFrog", "leftKoala", "leftMonkey", "leftPig"]
+        let rightsideImages = ["rightBear", "rightChick", "rightFrog", "rightKoala", "rightMonkey", "rightPig"]
+
+        let randomizedleft = leftsideImages.shuffled()
+        let randomizedright = rightsideImages.shuffled()
+
+        for (left, right) in zip(randomizedleft, randomizedright) {
+            randomizedList.append(left)
+            randomizedList.append(right)
         }
-        
-        pairs += pairs
-        pairs.shuffle()
-        cardPairs = pairs
     }
-    
-    
 }

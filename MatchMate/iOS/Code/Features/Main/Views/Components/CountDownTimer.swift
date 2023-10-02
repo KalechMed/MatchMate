@@ -11,7 +11,7 @@ struct CountDownTimer: View {
     
     // Mark: - Variables
     
-    @State var timeRemaining: Int = 15
+    @Binding var timeRemaining: Int
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
 
@@ -32,6 +32,6 @@ struct CountDownTimer: View {
 }
 
 #Preview {
-    CountDownTimer()
+    CountDownTimer(timeRemaining: .constant(15))
     
 }

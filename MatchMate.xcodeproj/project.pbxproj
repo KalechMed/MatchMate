@@ -25,6 +25,7 @@
 		D98A018E2AC09733004DE6CB /* Bobaland.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D98A018D2AC09733004DE6CB /* Bobaland.ttf */; };
 		D98A01912AC0CEA0004DE6CB /* ItemsBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A01902AC0CEA0004DE6CB /* ItemsBox.swift */; };
 		D98A01942AC0D5A9004DE6CB /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = D98A01932AC0D5A9004DE6CB /* Algorithms */; };
+		D9A12D182ACB3B56009840B1 /* randomizedPairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A12D172ACB3B56009840B1 /* randomizedPairs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		D98A018B2AC094E6004DE6CB /* attemptsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = attemptsView.swift; sourceTree = "<group>"; };
 		D98A018D2AC09733004DE6CB /* Bobaland.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bobaland.ttf; sourceTree = "<group>"; };
 		D98A01902AC0CEA0004DE6CB /* ItemsBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsBox.swift; sourceTree = "<group>"; };
+		D9A12D172ACB3B56009840B1 /* randomizedPairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = randomizedPairs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +279,7 @@
 				D98A01902AC0CEA0004DE6CB /* ItemsBox.swift */,
 				D94353112AC59D5C00E327B6 /* ScreenTimer.swift */,
 				D94353132AC59D8D00E327B6 /* GameView.swift */,
+				D9A12D172ACB3B56009840B1 /* randomizedPairs.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				D98A018A2AC094D0004DE6CB /* DetailsView.swift in Sources */,
 				D98A018C2AC094E6004DE6CB /* attemptsView.swift in Sources */,
 				D94353122AC59D5C00E327B6 /* ScreenTimer.swift in Sources */,
+				D9A12D182ACB3B56009840B1 /* randomizedPairs.swift in Sources */,
 				D909C46C2AC064D6005420F2 /* FontManager.swift in Sources */,
 				D94353142AC59D8D00E327B6 /* GameView.swift in Sources */,
 				D909C4342ABF3CF2005420F2 /* MatchMateApp.swift in Sources */,

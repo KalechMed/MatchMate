@@ -53,8 +53,8 @@ struct ItemsBox: View {
                 RoundedRectangle(cornerRadius: 10)
                     .frame(maxWidth: .infinity)
                     .foregroundColor(Color("Box"))
-                    .padding(.horizontal,30)
-                    .padding(.top,20)
+                    .padding(.horizontal,20)
+                    .padding(.top,10)
                 
                 VStack()
                 {
@@ -178,15 +178,15 @@ struct WhiteBox: View {
     var body: some View {
         ZStack() {
             RoundedRectangle(cornerRadius: 12)
-                .frame(width: 73,height: 73)
+                .frame(width: 60,height: 60)
                 .foregroundColor(.white)
 
-            HStack(alignment: .center, spacing: 0) {
+            HStack(alignment: .center, spacing: 1) {
                 ForEach(items, id: \.self) { item in
                     Image(item)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(height: 70)
+                        .frame(height: 54)
                         .shadow(radius: 1, x: 1, y: 1)
                         .draggable(item)
                 }
@@ -194,7 +194,7 @@ struct WhiteBox: View {
             }
             
         }
-        .padding(10)
+        .padding(.horizontal,30)
     }
 }
 
@@ -220,11 +220,11 @@ struct BigBox: View {
                             .draggable(item)
                             .fixedSize()
                         if items.firstIndex(of: item)! % 2 == 1 {
-                        Spacer(minLength: 4)
+                        Spacer(minLength: 20)
                         }
                     }
                 }
-                .padding(.horizontal,70)
+                .padding(.horizontal,90)
                 
                 HStack() {
                     ForEach(items.dropFirst(6), id: \.self) { item in
@@ -242,7 +242,7 @@ struct BigBox: View {
                         }
                     }
                 }
-                .padding(.horizontal,70)
+                .padding(.horizontal,90)
             }
             
         }

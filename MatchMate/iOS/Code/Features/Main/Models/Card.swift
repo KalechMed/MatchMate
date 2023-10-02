@@ -13,8 +13,5 @@ struct Card: Identifiable {
     let rightSideImage: Image
     
    
-    init(leftSideImage: Image, rightSideImage: Image) {
-        self.leftSideImage = leftSideImage
-        self.rightSideImage = rightSideImage
-    }
+    
 }
