@@ -7,12 +7,6 @@
 
 import SwiftUI
 import Algorithms
-
-
-
-#Preview {
-    ItemsBox()
-}
     
 
 struct ItemsBox: View {
@@ -23,7 +17,9 @@ struct ItemsBox: View {
     @State private var box4: [String] = []
     @State private var box5: [String] = []
     @State private var box6: [String] = []
-    @State private var box: [String] = ["leftBear","rightBear", "leftChick","rightChick","leftFrog","rightFrog","leftkoala","rightKoala","leftMonkey","rightMonkey","leftPig","rightPig"]
+    @State private var box:  [String] = ["leftBear","rightBear", "leftChick","rightChick","leftFrog","rightFrog","leftKoala","rightKoala","leftMonkey","rightMonkey","leftPig","rightPig"]
+    
+    @ObservedObject var timerViewModel: TimerViewModel
    
 
     var body: some View {
@@ -32,22 +28,36 @@ struct ItemsBox: View {
         VStack()
         {
             
-            BigBox(items: box)
-                .dropDestination(for: String.self) { droppedItems, location in
-                    for item in droppedItems {
-                        box1.removeAll { $0 == item }
-                        box2.removeAll { $0 == item }
-                        box3.removeAll { $0 == item }
-                        box4.removeAll { $0 == item }
-                        box5.removeAll { $0 == item }
-                        box6.removeAll { $0 == item }
+            if  timerViewModel.timeRemaining > 0
+            {
+                
+                randomizedPairs()
+               
+            }
+            else if timerViewModel.timeRemaining == 0
+            {
+                BigBox(items: box)
+                    .dropDestination(for: String.self) { droppedItems, location in
+                        for item in droppedItems {
+                            box1.removeAll { $0 == item }
+                            box2.removeAll { $0 == item }
+                            box3.removeAll { $0 == item }
+                            box4.removeAll { $0 == item }
+                            box5.removeAll { $0 == item }
+                            box6.removeAll { $0 == item }
+                            
+                        }
                         
+                        let totalItems = box + droppedItems
+                        box = Array(totalItems.uniqued())
+                        return true
                     }
-
-                    let totalItems = box + droppedItems
-                    box = Array(totalItems.uniqued())
-                    return true
-                }
+                
+                    
+                
+            }
+            
+            
             
             ZStack() {
                 RoundedRectangle(cornerRadius: 10)
@@ -170,6 +180,10 @@ struct ItemsBox: View {
             }
         }
     }
+}
+
+#Preview {
+    ItemsBox(timerViewModel: TimerViewModel())
 }
 
 struct WhiteBox: View {

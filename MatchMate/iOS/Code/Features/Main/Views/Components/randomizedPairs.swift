@@ -35,7 +35,6 @@ struct randomizedPairs: View {
                             .frame(height: 52)
                             .cornerRadius(8)
                             .shadow(radius: 1, x: 1, y: 1)
-                            .draggable(item)
                             .fixedSize()
                         if viewModel.randomizedList.firstIndex(of: item)! % 2 == 1 {
                         Spacer(minLength: 20)
@@ -52,11 +51,10 @@ struct randomizedPairs: View {
                             .frame(height: 52)
                             .cornerRadius(8)
                             .shadow(radius: 1, x: 1, y: 1)
-                            .draggable(item)
                             .fixedSize()
                         
                         if viewModel.randomizedList.firstIndex(of: item)! % 2 == 1 {
-                        Spacer(minLength: 4)
+                        Spacer(minLength: 0)
                         }
                     }
                 }

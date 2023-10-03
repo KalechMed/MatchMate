@@ -23,5 +23,8 @@ class CardViewModel: ObservableObject {
             randomizedList.append(left)
             randomizedList.append(right)
         }
+        
+        saveRandomizedList(randomizedList)
+        
     }
 }

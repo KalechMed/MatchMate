@@ -30,7 +30,7 @@ struct GameView: View {
                     .padding(10)
                 
                 
-                ItemsBox()
+                ItemsBox(timerViewModel: TimerViewModel())
                 
                 
                 
