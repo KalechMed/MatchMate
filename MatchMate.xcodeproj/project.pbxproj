@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D900B1F32AD23B34008A67CC /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D900B1F22AD23B34008A67CC /* BlurView.swift */; };
 		D909C4342ABF3CF2005420F2 /* MatchMateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909C4332ABF3CF2005420F2 /* MatchMateApp.swift */; };
 		D909C4362ABF3CF2005420F2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909C4352ABF3CF2005420F2 /* MainView.swift */; };
 		D909C4382ABF3CF5005420F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D909C4372ABF3CF5005420F2 /* Assets.xcassets */; };
@@ -25,6 +26,11 @@
 		D98A018E2AC09733004DE6CB /* Bobaland.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D98A018D2AC09733004DE6CB /* Bobaland.ttf */; };
 		D98A01912AC0CEA0004DE6CB /* ItemsBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A01902AC0CEA0004DE6CB /* ItemsBox.swift */; };
 		D98A01942AC0D5A9004DE6CB /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = D98A01932AC0D5A9004DE6CB /* Algorithms */; };
+		D990CBFA2AD1BB5500156C43 /* WinAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D990CBF92AD1BB5500156C43 /* WinAlertView.swift */; };
+		D990CBFC2AD1E3B400156C43 /* GifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D990CBFB2AD1E3B400156C43 /* GifView.swift */; };
+		D990CC012AD1E4AB00156C43 /* Cat.gif in Resources */ = {isa = PBXBuildFile; fileRef = D990CC002AD1E4AB00156C43 /* Cat.gif */; };
+		D990CC032AD1E4B500156C43 /* Lost.gif in Resources */ = {isa = PBXBuildFile; fileRef = D990CC022AD1E4B500156C43 /* Lost.gif */; };
+		D990CC072AD1E4E900156C43 /* Carlo.gif in Resources */ = {isa = PBXBuildFile; fileRef = D990CC062AD1E4E900156C43 /* Carlo.gif */; };
 		D9A12D182ACB3B56009840B1 /* randomizedPairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A12D172ACB3B56009840B1 /* randomizedPairs.swift */; };
 		D9AE3D972ACC698400F9DBD3 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AE3D962ACC698400F9DBD3 /* TimerViewModel.swift */; };
 		D9AE3D992ACC985100F9DBD3 /* DataCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AE3D982ACC985100F9DBD3 /* DataCaching.swift */; };
@@ -48,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D900B1F22AD23B34008A67CC /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		D909C4302ABF3CF2005420F2 /* MatchMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D909C4332ABF3CF2005420F2 /* MatchMateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMateApp.swift; sourceTree = "<group>"; };
 		D909C4352ABF3CF2005420F2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -69,6 +76,11 @@
 		D98A018B2AC094E6004DE6CB /* attemptsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = attemptsView.swift; sourceTree = "<group>"; };
 		D98A018D2AC09733004DE6CB /* Bobaland.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bobaland.ttf; sourceTree = "<group>"; };
 		D98A01902AC0CEA0004DE6CB /* ItemsBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsBox.swift; sourceTree = "<group>"; };
+		D990CBF92AD1BB5500156C43 /* WinAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinAlertView.swift; sourceTree = "<group>"; };
+		D990CBFB2AD1E3B400156C43 /* GifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifView.swift; sourceTree = "<group>"; };
+		D990CC002AD1E4AB00156C43 /* Cat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Cat.gif; sourceTree = "<group>"; };
+		D990CC022AD1E4B500156C43 /* Lost.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Lost.gif; sourceTree = "<group>"; };
+		D990CC062AD1E4E900156C43 /* Carlo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Carlo.gif; sourceTree = "<group>"; };
 		D9A12D172ACB3B56009840B1 /* randomizedPairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = randomizedPairs.swift; sourceTree = "<group>"; };
 		D9AE3D962ACC698400F9DBD3 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		D9AE3D982ACC985100F9DBD3 /* DataCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCaching.swift; sourceTree = "<group>"; };
@@ -226,6 +238,7 @@
 		D909C4662ABF40C0005420F2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D990CBFD2AD1E47600156C43 /* Gifs */,
 				D909C4692ABF4138005420F2 /* Info.plist */,
 				D909C4682ABF4117005420F2 /* Fonts */,
 				D909C4372ABF3CF5005420F2 /* Assets.xcassets */,
@@ -286,8 +299,21 @@
 				D94353112AC59D5C00E327B6 /* ScreenTimer.swift */,
 				D94353132AC59D8D00E327B6 /* GameView.swift */,
 				D9A12D172ACB3B56009840B1 /* randomizedPairs.swift */,
+				D990CBF92AD1BB5500156C43 /* WinAlertView.swift */,
+				D990CBFB2AD1E3B400156C43 /* GifView.swift */,
+				D900B1F22AD23B34008A67CC /* BlurView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		D990CBFD2AD1E47600156C43 /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				D990CC062AD1E4E900156C43 /* Carlo.gif */,
+				D990CC002AD1E4AB00156C43 /* Cat.gif */,
+				D990CC022AD1E4B500156C43 /* Lost.gif */,
+			);
+			path = Gifs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,8 +427,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D98A018E2AC09733004DE6CB /* Bobaland.ttf in Resources */,
+				D990CC032AD1E4B500156C43 /* Lost.gif in Resources */,
 				D909C43B2ABF3CF5005420F2 /* Preview Assets.xcassets in Resources */,
+				D990CC012AD1E4AB00156C43 /* Cat.gif in Resources */,
 				D909C4382ABF3CF5005420F2 /* Assets.xcassets in Resources */,
+				D990CC072AD1E4E900156C43 /* Carlo.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +456,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D990CBFA2AD1BB5500156C43 /* WinAlertView.swift in Sources */,
 				D909C4362ABF3CF2005420F2 /* MainView.swift in Sources */,
 				D98A018A2AC094D0004DE6CB /* DetailsView.swift in Sources */,
 				D98A018C2AC094E6004DE6CB /* attemptsView.swift in Sources */,
@@ -435,9 +465,11 @@
 				D9A12D182ACB3B56009840B1 /* randomizedPairs.swift in Sources */,
 				D909C46C2AC064D6005420F2 /* FontManager.swift in Sources */,
 				D9AE3D992ACC985100F9DBD3 /* DataCaching.swift in Sources */,
+				D990CBFC2AD1E3B400156C43 /* GifView.swift in Sources */,
 				D94353142AC59D8D00E327B6 /* GameView.swift in Sources */,
 				D909C4342ABF3CF2005420F2 /* MatchMateApp.swift in Sources */,
 				D98A01882AC081D6004DE6CB /* CountDownTimer.swift in Sources */,
+				D900B1F32AD23B34008A67CC /* BlurView.swift in Sources */,
 				D909C4752AC06B71005420F2 /* Card.swift in Sources */,
 				D909C4772AC06D24005420F2 /* CardViewModel.swift in Sources */,
 				D98A01912AC0CEA0004DE6CB /* ItemsBox.swift in Sources */,

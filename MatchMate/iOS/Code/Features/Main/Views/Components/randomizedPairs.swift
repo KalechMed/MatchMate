@@ -62,10 +62,7 @@ struct randomizedPairs: View {
             }
             
         }
-        .onAppear{
-            viewModel.generateRandomCardPairs()
-            print(" in view \(viewModel.randomizedList)")
-        }
+        
         
         
     }
