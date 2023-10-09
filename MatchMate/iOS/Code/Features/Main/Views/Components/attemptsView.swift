@@ -54,10 +54,12 @@ struct attemptsView: View {
                     .frame(width: calculateUsedBarWidth(), height: 26)
                     .cornerRadius(20)
                     .foregroundColor(Color("lightBlue"))
+                    .animation(Animation.easeInOut(duration: 1.5),value: usedAttempts)
                 
                 Spacer()
             }
         }
+        
         
     }
     
@@ -70,5 +72,5 @@ struct attemptsView: View {
 }
     
 #Preview {
-    attemptsView(usedAttempts: 1)
+    attemptsView(usedAttempts: 2)
 }
