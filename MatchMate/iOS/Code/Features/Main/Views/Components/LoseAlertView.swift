@@ -11,6 +11,7 @@ struct LoseAlertView: View {
     
     @Binding var show : Bool
     
+    
     var body: some View {
         ZStack(alignment:Alignment(horizontal: .trailing, vertical: .top)) {
         VStack(spacing: 25)
@@ -48,7 +49,7 @@ struct LoseAlertView: View {
                                 
                             
                             
-                            Text("2")
+                            Text("3")
                                 .font(Bobaland.Regular.font(size:30))
                                 .foregroundColor(Color("GrayTxt"))
                             Text("Attempts")

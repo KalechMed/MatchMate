@@ -50,7 +50,39 @@ struct ItemsBox: View {
                 
                 attemptsView(usedAttempts: usedAttempts)
                 
-                DetailsView()
+                if  timerViewModel.timeRemaining == 0
+                {
+                    HStack()
+                    {
+                    Text("Start Matching !!")
+                        .font(Bobaland.Regular.font(size: 26))
+                        .padding(.vertical,20)
+                        .padding(.leading,30)
+                        
+                        
+                        
+                    Spacer()
+                        
+                   
+                    }
+                    .padding(.horizontal,30)
+                               
+                }
+                else {
+                    
+                    HStack(alignment: .center) {
+                        
+                            Text("it´s counting ! Pay attention to every detail.")
+                                .font(Bobaland.Regular.font(size: 16))
+                                
+                        Spacer()
+                        CountDownTimer(timeRemaining: $timerViewModel.timeRemaining)
+                           
+                               
+                        }
+                    .padding(.horizontal,50)
+                }
+                
                     
                     
                 
@@ -241,7 +273,7 @@ struct ItemsBox: View {
                 
                
                 if combinedList.elementsEqual(randomizedList) && usedAttempts <= 3 {
-                    WinAlertView(show: $Win)
+                    WinAlertView(usedAttempts:$usedAttempts , show: $Win)
                     
                     
                 } else if box.isEmpty && usedAttempts >= 3 {

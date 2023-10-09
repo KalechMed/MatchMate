@@ -10,7 +10,7 @@ import SwiftUI
 
 struct WinAlertView: View {
 
-    
+    @Binding var usedAttempts : Int
     @Binding var show : Bool
     
     var body: some View {
@@ -50,7 +50,7 @@ struct WinAlertView: View {
                                 
                             
                             
-                            Text("2")
+                            Text("\(usedAttempts)")
                                 .font(Bobaland.Regular.font(size:30))
                                 .foregroundColor(Color("GrayTxt"))
                             Text("Attempts")
@@ -115,5 +115,5 @@ struct WinAlertView: View {
 }
 
 #Preview {
-    WinAlertView(show: .constant(true))
+    WinAlertView(usedAttempts: .constant(3), show: .constant(true))
 }
