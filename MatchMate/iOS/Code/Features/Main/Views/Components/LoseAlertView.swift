@@ -1,15 +1,13 @@
 //
-//  CustomAlertView.swift
+//  LoseAlertView.swift
 //  MatchMate
 //
-//  Created by Mohamed  on 7/10/2023.
+//  Created by Mohamed  on 9/10/2023.
 //
 
 import SwiftUI
 
-
-struct WinAlertView: View {
-
+struct LoseAlertView: View {
     
     @Binding var show : Bool
     
@@ -21,7 +19,7 @@ struct WinAlertView: View {
                 HStack(spacing: 10)
                 {
                 
-                Text("You Won")
+                Text("Game Over")
                     .font(Bobaland.Regular.font(size:40))
                     .foregroundColor(Color("Title"))
                     .padding(.trailing,10)
@@ -35,7 +33,7 @@ struct WinAlertView: View {
                 
                 HStack()
                 {
-                    GifView("Cat")
+                    GifView("Lost")
                         .frame(width: 92,height: 121)
                         .padding(.trailing,10)
                     
@@ -64,7 +62,7 @@ struct WinAlertView: View {
                         {
                             Image("seconds")
                                 .resizable()
-                                .frame(width: 24,height: 26)
+                                .frame(width: 26,height: 26)
                                 .padding(.trailing,10)
                                 
                             
@@ -89,7 +87,7 @@ struct WinAlertView: View {
                        }
                    
                 ) {
-                    Text("Menu")
+                    Text("Play Again")
                         .font(Bobaland.Regular.font(size:30))
                         .foregroundColor(.white)
                         .padding()
@@ -115,5 +113,5 @@ struct WinAlertView: View {
 }
 
 #Preview {
-    WinAlertView(show: .constant(true))
+    LoseAlertView(show: .constant(true))
 }

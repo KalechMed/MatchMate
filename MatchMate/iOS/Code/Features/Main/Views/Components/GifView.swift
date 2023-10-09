@@ -34,5 +34,5 @@ struct GifView: UIViewRepresentable {
 }
 
 #Preview {
-    GifView("CatGif")
+    GifView("Cat")
 }

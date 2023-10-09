@@ -19,14 +19,20 @@ struct ItemsBox: View {
     @State private var box6: [String] = []
     @State private var box:  [String] = ["leftBear","rightBear", "leftChick","rightChick","leftFrog","rightFrog","leftKoala","rightKoala","leftMonkey","rightMonkey","leftPig","rightPig"]
     
+
+    
     @ObservedObject var timerViewModel: TimerViewModel
     let randomizedList: [String] = getSavedRandomizedList() ?? []
     @State private var combinedList: [String] = []
-    @State var WinCondition = true
+    @State var Win = false
+    @State var GameOver = false
+    @State private var hasBoxChanged = true
+    @State var usedAttempts : Int = 1
     
   
     
     var body: some View {
+        
         
         ZStack()
         {
@@ -34,230 +40,295 @@ struct ItemsBox: View {
            
             
             
-            VStack()
+            VStack(alignment: .center)
             {
                 
-                if  timerViewModel.timeRemaining > 0
+                Text("Match Mate")
+                    .font(Bobaland.Regular.font(size:40))
+                    .foregroundColor(Color("Title"))
+                    .padding(.bottom,20)
+                
+                attemptsView(usedAttempts: usedAttempts)
+                
+                DetailsView()
+                    
+                    
+                
+                
+                
+                VStack()
                 {
                     
-                    randomizedPairs()
-                    
-                }
-                else if timerViewModel.timeRemaining == 0
-                {
-                    BigBox(items: box)
-                        .dropDestination(for: String.self) { droppedItems, location in
-                            for item in droppedItems {
-                                box1.removeAll { $0 == item }
-                                box2.removeAll { $0 == item }
-                                box3.removeAll { $0 == item }
-                                box4.removeAll { $0 == item }
-                                box5.removeAll { $0 == item }
-                                box6.removeAll { $0 == item }
+                    if  timerViewModel.timeRemaining > 0
+                    {
+                        
+                        randomizedPairs()
+                        
+                        
+                    }
+                    else if timerViewModel.timeRemaining == 0
+                    {
+                        
+                        BigBox(items: box)
+                            .dropDestination(for: String.self) { droppedItems, location in
+                                for item in droppedItems {
+                                    box1.removeAll { $0 == item }
+                                    box2.removeAll { $0 == item }
+                                    box3.removeAll { $0 == item }
+                                    box4.removeAll { $0 == item }
+                                    box5.removeAll { $0 == item }
+                                    box6.removeAll { $0 == item }
+                                    
+                                }
                                 
+                                let totalItems = box + droppedItems
+                                box = Array(totalItems.uniqued())
+                                
+                                return true
+                            }
+                        
+                        
+                        
+                        
+                    }
+                       
+                    
+                    
+                    
+                    
+                    ZStack() {
+                        RoundedRectangle(cornerRadius: 10)
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(Color("Box"))
+                            .padding(.horizontal,20)
+                            .padding(.top,10)
+                        
+                        VStack()
+                        {
+                            HStack() {
+                                WhiteBox(items: box1)
+                                    .dropDestination(for: String.self) { droppedItems, location in
+                                        for item in droppedItems {
+                                            box2.removeAll { $0 == item }
+                                            box3.removeAll { $0 == item }
+                                            box4.removeAll { $0 == item }
+                                            box5.removeAll { $0 == item }
+                                            box6.removeAll { $0 == item }
+                                            box.removeAll { $0 == item }
+                                        }
+                                        
+                                        let totalItems = box1 + droppedItems
+                                        box1 = Array(totalItems.uniqued())
+                                        return true
+                                    }
+                                
+                                
+                                WhiteBox(items: box2)
+                                    .dropDestination(for: String.self) { droppedItems, location in
+                                        for item in droppedItems {
+                                            box1.removeAll { $0 == item }
+                                            box3.removeAll { $0 == item }
+                                            box4.removeAll { $0 == item }
+                                            box5.removeAll { $0 == item }
+                                            box6.removeAll { $0 == item }
+                                            box.removeAll { $0 == item }
+                                        }
+                                        
+                                        let totalItems = box2 + droppedItems
+                                        box2 = Array(totalItems.uniqued())
+                                        return true
+                                    }
                             }
                             
-                            let totalItems = box + droppedItems
-                            box = Array(totalItems.uniqued())
-                            return true
-                        }
-                    
-                    
-                    
-                }
-                
-                
-                
-                
-                ZStack() {
-                    RoundedRectangle(cornerRadius: 10)
-                        .frame(maxWidth: .infinity)
-                        .foregroundColor(Color("Box"))
-                        .padding(.horizontal,20)
-                        .padding(.top,10)
-                    
-                    VStack()
-                    {
-                        HStack() {
-                            WhiteBox(items: box1)
-                                .dropDestination(for: String.self) { droppedItems, location in
-                                    for item in droppedItems {
-                                        box2.removeAll { $0 == item }
-                                        box3.removeAll { $0 == item }
-                                        box4.removeAll { $0 == item }
-                                        box5.removeAll { $0 == item }
-                                        box6.removeAll { $0 == item }
-                                        box.removeAll { $0 == item }
+                            HStack() {
+                                WhiteBox(items: box3)
+                                    .dropDestination(for: String.self) { droppedItems, location in
+                                        for item in droppedItems {
+                                            box2.removeAll { $0 == item }
+                                            box1.removeAll { $0 == item }
+                                            box4.removeAll { $0 == item }
+                                            box5.removeAll { $0 == item }
+                                            box6.removeAll { $0 == item }
+                                            box.removeAll { $0 == item }
+                                        }
+                                        
+                                        let totalItems = box3 + droppedItems
+                                        box3 = Array(totalItems.uniqued())
+                                        return true
                                     }
-                                    
-                                    let totalItems = box1 + droppedItems
-                                    box1 = Array(totalItems.uniqued())
-                                    return true
-                                }
+                                
+                                
+                                WhiteBox(items: box4)
+                                    .dropDestination(for: String.self) { droppedItems, location in
+                                        for item in droppedItems {
+                                            box2.removeAll { $0 == item }
+                                            box3.removeAll { $0 == item }
+                                            box1.removeAll { $0 == item }
+                                            box5.removeAll { $0 == item }
+                                            box6.removeAll { $0 == item }
+                                            box.removeAll { $0 == item }
+                                        }
+                                        
+                                        let totalItems = box4 + droppedItems
+                                        box4 = Array(totalItems.uniqued())
+                                        return true
+                                    }
+                            }
                             
                             
-                            WhiteBox(items: box2)
-                                .dropDestination(for: String.self) { droppedItems, location in
-                                    for item in droppedItems {
-                                        box1.removeAll { $0 == item }
-                                        box3.removeAll { $0 == item }
-                                        box4.removeAll { $0 == item }
-                                        box5.removeAll { $0 == item }
-                                        box6.removeAll { $0 == item }
-                                        box.removeAll { $0 == item }
-                                    }
-                                    
-                                    let totalItems = box2 + droppedItems
-                                    box2 = Array(totalItems.uniqued())
-                                    return true
-                                }
-                        }
-                        
-                        HStack() {
-                            WhiteBox(items: box3)
-                                .dropDestination(for: String.self) { droppedItems, location in
-                                    for item in droppedItems {
-                                        box2.removeAll { $0 == item }
-                                        box1.removeAll { $0 == item }
-                                        box4.removeAll { $0 == item }
-                                        box5.removeAll { $0 == item }
-                                        box6.removeAll { $0 == item }
-                                        box.removeAll { $0 == item }
-                                    }
-                                    
-                                    let totalItems = box3 + droppedItems
-                                    box3 = Array(totalItems.uniqued())
-                                    return true
-                                }
                             
-                            
-                            WhiteBox(items: box4)
-                                .dropDestination(for: String.self) { droppedItems, location in
-                                    for item in droppedItems {
-                                        box2.removeAll { $0 == item }
-                                        box3.removeAll { $0 == item }
-                                        box1.removeAll { $0 == item }
-                                        box5.removeAll { $0 == item }
-                                        box6.removeAll { $0 == item }
-                                        box.removeAll { $0 == item }
+                            HStack() {
+                                WhiteBox(items: box5)
+                                    .dropDestination(for: String.self) { droppedItems, location in
+                                        for item in droppedItems {
+                                            box2.removeAll { $0 == item }
+                                            box3.removeAll { $0 == item }
+                                            box4.removeAll { $0 == item }
+                                            box1.removeAll { $0 == item }
+                                            box6.removeAll { $0 == item }
+                                            box.removeAll { $0 == item }
+                                        }
+                                        
+                                        let totalItems = box5 + droppedItems
+                                        box5 = Array(totalItems.uniqued())
+                                        return true
                                     }
-                                    
-                                    let totalItems = box4 + droppedItems
-                                    box4 = Array(totalItems.uniqued())
-                                    return true
-                                }
+                                
+                                
+                                WhiteBox(items: box6)
+                                    .dropDestination(for: String.self) { droppedItems, location in
+                                        for item in droppedItems {
+                                            box2.removeAll { $0 == item }
+                                            box3.removeAll { $0 == item }
+                                            box4.removeAll { $0 == item }
+                                            box5.removeAll { $0 == item }
+                                            box1.removeAll { $0 == item }
+                                            box.removeAll { $0 == item }
+                                        }
+                                        
+                                        let totalItems = box6 + droppedItems
+                                        box6 = Array(totalItems.uniqued())
+                                        return true
+                                    }
+                            }
                         }
                         
                         
-                        
-                        HStack() {
-                            WhiteBox(items: box5)
-                                .dropDestination(for: String.self) { droppedItems, location in
-                                    for item in droppedItems {
-                                        box2.removeAll { $0 == item }
-                                        box3.removeAll { $0 == item }
-                                        box4.removeAll { $0 == item }
-                                        box1.removeAll { $0 == item }
-                                        box6.removeAll { $0 == item }
-                                        box.removeAll { $0 == item }
-                                    }
-                                    
-                                    let totalItems = box5 + droppedItems
-                                    box5 = Array(totalItems.uniqued())
-                                    return true
-                                }
-                            
-                            
-                            WhiteBox(items: box6)
-                                .dropDestination(for: String.self) { droppedItems, location in
-                                    for item in droppedItems {
-                                        box2.removeAll { $0 == item }
-                                        box3.removeAll { $0 == item }
-                                        box4.removeAll { $0 == item }
-                                        box5.removeAll { $0 == item }
-                                        box1.removeAll { $0 == item }
-                                        box.removeAll { $0 == item }
-                                    }
-                                    
-                                    let totalItems = box6 + droppedItems
-                                    box6 = Array(totalItems.uniqued())
-                                    return true
-                                }
-                        }
                     }
                     
                     
                 }
+                .onAppear
+                {
+                        
+                    
+                    print("randomizedList in itemBox \(randomizedList)")
+                }
+                
+                
+                
             }
-            .onAppear
-            {
-                print("randomizedList in itemBox \(randomizedList)")
-            }
+            .navigationBarBackButtonHidden()
+            
+           
+                
+               
+            
+            
             
             VStack {
                 
                 
-                
-                
-                if combinedList.elementsEqual(randomizedList) {
-                    WinAlertView(show: $WinCondition)
+               
+                if combinedList.elementsEqual(randomizedList) && usedAttempts <= 3 {
+                    WinAlertView(show: $Win)
                     
                     
-                } else {
+                } else if box.isEmpty && usedAttempts >= 3 {
                     
-                    WinAlertView(show: $WinCondition)
-                    
+                    LoseAlertView(show: $GameOver)
                 }
+                    
+                    
+                    
+                
             }
             .onAppear {
                 // Initialize the combined list on appear
                 combinedList = box1 + box2 + box3 + box4 + box5 + box6
-                print("combinedList :\(combinedList)")
-                
+                hasBoxChanged =  true
                 
             }
             .onChange(of: box1, perform: { _ in
                 // Update the combined list whenever there's a change in box1
                 combinedList = box1 + box2 + box3 + box4 + box5 + box6
-                print("combinedList :\(combinedList)")
+                
                 
             })
             .onChange(of: box2, perform: { _ in
                 // Update the combined list whenever there's a change in box2
                 combinedList = box1 + box2 + box3 + box4 + box5 + box6
-                print("combinedList :\(combinedList)")
+                
                 
             })
             .onChange(of: box3, perform: { _ in
                 // Update the combined list whenever there's a change in box3
                 combinedList = box1 + box2 + box3 + box4 + box5 + box6
-                print("combinedList :\(combinedList)")
+                
                 
             })
             .onChange(of: box4, perform: { _ in
                 // Update the combined list whenever there's a change in box4
                 combinedList = box1 + box2 + box3 + box4 + box5 + box6
-                print("combinedList :\(combinedList)")
+               
                 
             })
             .onChange(of: box5, perform: { _ in
                 // Update the combined list whenever there's a change in box5
                 combinedList = box1 + box2 + box3 + box4 + box5 + box6
-                print("combinedList :\(combinedList)")
+                
                 
             })
             .onChange(of: box6, perform: { _ in
                 // Update the combined list whenever there's a change in box6
                 combinedList = box1 + box2 + box3 + box4 + box5 + box6
-                print("combinedList :\(combinedList)")
+                
+                hasBoxChanged = true
+                checkGameStatus()
+                print("\(hasBoxChanged)")
                 
                 
             })
+            
+            
         }
         
-        
-       
     }
+    
+    func checkGameStatus() {
+        
+        print("\(hasBoxChanged)")
+        if box.isEmpty && usedAttempts < 3 && !combinedList.elementsEqual(randomizedList) && hasBoxChanged {
+            timerViewModel.timeRemaining += 15
+            usedAttempts += 1
+            
+           
+            box1 = []
+            box2 = []
+            box3 = []
+            box4 = []
+            box5 = []
+            box6 = []
+            
+            hasBoxChanged = false
+            timerViewModel.startTimer()
+            box = ["leftBear","rightBear", "leftChick","rightChick","leftFrog","rightFrog","leftKoala","rightKoala","leftMonkey","rightMonkey","leftPig","rightPig"]
+            
+           
+        }
+    }
+    
+    
     
     
 }

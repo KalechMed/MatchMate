@@ -22,29 +22,32 @@ struct DetailsView: View {
             HStack()
             {
             Text("Start Matching !!")
-                .font(Bobaland.Regular.font(size: 20))
+                .font(Bobaland.Regular.font(size: 26))
+                .padding(.vertical,20)
+                .padding(.leading,30)
+                
+                
                 
             Spacer()
                 
-            Image("start")
-                    .resizable()
-                    .frame(width: 30, height: 30)
+           
             }
-            .padding(.horizontal,40)
+            .padding(.horizontal,30)
                        
         }
         else {
             
-            HStack(alignment: .center,spacing: 30) {
-                   
+            HStack(alignment: .center) {
+                
                     Text("it´s counting ! Pay attention to every detail.")
                         .font(Bobaland.Regular.font(size: 16))
                         
+                Spacer()
                 CountDownTimer(timeRemaining: $timeRemaining)
                    
                        
                 }
-            .padding(.horizontal,30)
+            .padding(.horizontal,50)
         }
         
         

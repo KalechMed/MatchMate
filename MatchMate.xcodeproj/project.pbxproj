@@ -19,7 +19,7 @@
 		D909C4772AC06D24005420F2 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909C4762AC06D24005420F2 /* CardViewModel.swift */; };
 		D909C4792AC07637005420F2 /* RandomizingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909C4782AC07637005420F2 /* RandomizingTests.swift */; };
 		D94353122AC59D5C00E327B6 /* ScreenTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94353112AC59D5C00E327B6 /* ScreenTimer.swift */; };
-		D94353142AC59D8D00E327B6 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94353132AC59D8D00E327B6 /* GameView.swift */; };
+		D97E43342AD4614A00FA52DE /* LoseAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97E43332AD4614A00FA52DE /* LoseAlertView.swift */; };
 		D98A01882AC081D6004DE6CB /* CountDownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A01872AC081D6004DE6CB /* CountDownTimer.swift */; };
 		D98A018A2AC094D0004DE6CB /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A01892AC094D0004DE6CB /* DetailsView.swift */; };
 		D98A018C2AC094E6004DE6CB /* attemptsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A018B2AC094E6004DE6CB /* attemptsView.swift */; };
@@ -70,7 +70,7 @@
 		D909C4762AC06D24005420F2 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		D909C4782AC07637005420F2 /* RandomizingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizingTests.swift; sourceTree = "<group>"; };
 		D94353112AC59D5C00E327B6 /* ScreenTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimer.swift; sourceTree = "<group>"; };
-		D94353132AC59D8D00E327B6 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		D97E43332AD4614A00FA52DE /* LoseAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseAlertView.swift; sourceTree = "<group>"; };
 		D98A01872AC081D6004DE6CB /* CountDownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownTimer.swift; sourceTree = "<group>"; };
 		D98A01892AC094D0004DE6CB /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		D98A018B2AC094E6004DE6CB /* attemptsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = attemptsView.swift; sourceTree = "<group>"; };
@@ -297,11 +297,11 @@
 				D98A018B2AC094E6004DE6CB /* attemptsView.swift */,
 				D98A01902AC0CEA0004DE6CB /* ItemsBox.swift */,
 				D94353112AC59D5C00E327B6 /* ScreenTimer.swift */,
-				D94353132AC59D8D00E327B6 /* GameView.swift */,
 				D9A12D172ACB3B56009840B1 /* randomizedPairs.swift */,
 				D990CBF92AD1BB5500156C43 /* WinAlertView.swift */,
 				D990CBFB2AD1E3B400156C43 /* GifView.swift */,
 				D900B1F22AD23B34008A67CC /* BlurView.swift */,
+				D97E43332AD4614A00FA52DE /* LoseAlertView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -459,6 +459,7 @@
 				D990CBFA2AD1BB5500156C43 /* WinAlertView.swift in Sources */,
 				D909C4362ABF3CF2005420F2 /* MainView.swift in Sources */,
 				D98A018A2AC094D0004DE6CB /* DetailsView.swift in Sources */,
+				D97E43342AD4614A00FA52DE /* LoseAlertView.swift in Sources */,
 				D98A018C2AC094E6004DE6CB /* attemptsView.swift in Sources */,
 				D9AE3D972ACC698400F9DBD3 /* TimerViewModel.swift in Sources */,
 				D94353122AC59D5C00E327B6 /* ScreenTimer.swift in Sources */,
@@ -466,7 +467,6 @@
 				D909C46C2AC064D6005420F2 /* FontManager.swift in Sources */,
 				D9AE3D992ACC985100F9DBD3 /* DataCaching.swift in Sources */,
 				D990CBFC2AD1E3B400156C43 /* GifView.swift in Sources */,
-				D94353142AC59D8D00E327B6 /* GameView.swift in Sources */,
 				D909C4342ABF3CF2005420F2 /* MatchMateApp.swift in Sources */,
 				D98A01882AC081D6004DE6CB /* CountDownTimer.swift in Sources */,
 				D900B1F32AD23B34008A67CC /* BlurView.swift in Sources */,

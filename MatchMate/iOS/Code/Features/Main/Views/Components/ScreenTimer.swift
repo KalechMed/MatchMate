@@ -20,7 +20,7 @@ struct ScreenTimer: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Text("memory time! starting in")
+                Text("Memory time! starting in")
                     .font(Bobaland.Regular.font(size: 30))
                 Text("\(timeRemaining)")
                     .font(Bobaland.Regular.font(size: 200))
@@ -39,7 +39,7 @@ struct ScreenTimer: View {
             }
             .navigationDestination(
                      isPresented: $navigateToGame) {
-                         GameView()
+                         ItemsBox(timerViewModel: TimerViewModel())
                           
                      }
             
