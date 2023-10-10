@@ -28,7 +28,9 @@ struct menuView: View {
                     Text("Match Mate")
                         .font(Bobaland.Regular.font(size:50))
                         .foregroundColor(Color("Title"))
-                        .padding(.bottom,20)
+                        .padding(.top,90)
+                    
+                    Spacer()
                     
                     VStack(spacing: 30)
                     {
@@ -80,7 +82,8 @@ struct menuView: View {
                         }
                     }
                     
-                    HStack()
+                    Spacer()
+                    HStack(spacing: 30)
                     {
                         Button(action: {
                                   
@@ -122,6 +125,7 @@ struct menuView: View {
                             
                         }
                     }
+                    .padding(.bottom,90)
                 }
                
             }
