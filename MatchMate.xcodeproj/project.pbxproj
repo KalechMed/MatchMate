@@ -38,6 +38,7 @@
 		D9CEAC212AD582B9001269AE /* try.gif in Resources */ = {isa = PBXBuildFile; fileRef = D9CEAC202AD582B9001269AE /* try.gif */; };
 		D9CEAC232AD58361001269AE /* menuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CEAC222AD58361001269AE /* menuView.swift */; };
 		D9CEAC252AD58DD6001269AE /* TryAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CEAC242AD58DD6001269AE /* TryAlertView.swift */; };
+		D9CEAC272AD597FF001269AE /* BackgroundMenu.gif in Resources */ = {isa = PBXBuildFile; fileRef = D9CEAC262AD597FF001269AE /* BackgroundMenu.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		D9CEAC202AD582B9001269AE /* try.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = try.gif; sourceTree = "<group>"; };
 		D9CEAC222AD58361001269AE /* menuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuView.swift; sourceTree = "<group>"; };
 		D9CEAC242AD58DD6001269AE /* TryAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryAlertView.swift; sourceTree = "<group>"; };
+		D9CEAC262AD597FF001269AE /* BackgroundMenu.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BackgroundMenu.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +321,7 @@
 		D990CBFD2AD1E47600156C43 /* Gifs */ = {
 			isa = PBXGroup;
 			children = (
+				D9CEAC262AD597FF001269AE /* BackgroundMenu.gif */,
 				D9CEAC202AD582B9001269AE /* try.gif */,
 				D9CEAC1E2AD582A3001269AE /* cryingCat.gif */,
 				D990CC062AD1E4E900156C43 /* Carlo.gif */,
@@ -443,6 +446,7 @@
 				D9CEAC1F2AD582A3001269AE /* cryingCat.gif in Resources */,
 				D909C43B2ABF3CF5005420F2 /* Preview Assets.xcassets in Resources */,
 				D990CC012AD1E4AB00156C43 /* Cat.gif in Resources */,
+				D9CEAC272AD597FF001269AE /* BackgroundMenu.gif in Resources */,
 				D909C4382ABF3CF5005420F2 /* Assets.xcassets in Resources */,
 				D990CC072AD1E4E900156C43 /* Carlo.gif in Resources */,
 				D9CEAC212AD582B9001269AE /* try.gif in Resources */,

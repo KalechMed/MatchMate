@@ -11,6 +11,7 @@ struct MainView: View {
     
     // Mark: - Variables
     
+    @State var isToggled :Bool = true
     // Mark: - Views
     
     var body: some View {
@@ -18,7 +19,7 @@ struct MainView: View {
         
         NavigationView
         {
-            ScreenTimer()
+            menuView(isToggled: $isToggled)
             
             
         }

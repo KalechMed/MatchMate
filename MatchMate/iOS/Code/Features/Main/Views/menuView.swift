@@ -10,75 +10,130 @@ import SwiftUI
 struct menuView: View {
     
     @State var navigateToGame: Bool = false
+    @Binding var isToggled: Bool
+    
     
     var body: some View {
         
         NavigationStack
         {
-            
-            VStack(alignment: .center)
-            {
+            ZStack(alignment:Alignment(horizontal: .center, vertical: .center)) {
                 
-                Text("Match Mate")
-                    .font(Bobaland.Regular.font(size:50))
-                    .foregroundColor(Color("Title"))
-                    .padding(.bottom,20)
+                GifView("BackgroundMenu")
+                .edgesIgnoringSafeArea(.all)
                 
-                VStack(spacing: 30)
+                VStack(alignment: .center)
                 {
                     
-                    Button(action: {
-                        navigateToGame = true
+                    Text("Match Mate")
+                        .font(Bobaland.Regular.font(size:50))
+                        .foregroundColor(Color("Title"))
+                        .padding(.bottom,20)
+                    
+                    VStack(spacing: 30)
+                    {
                         
-                    }
-                           
-                    ) {
-                        Text("Level 1")
-                            .font(Bobaland.Regular.font(size:30))
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(width: 240, height: 50)
-                            .background(Color("lightBlue"))
-                            .cornerRadius(16)
-                    }
-                    .navigationDestination(
-                        isPresented: $navigateToGame) {
-                            ScreenTimer()
+                        Button(action: {
+                            navigateToGame = true
                             
                         }
-                    Button(action: {
-                        
+                               
+                        ) {
+                            Text("Level 1")
+                                .font(Bobaland.Regular.font(size:30))
+                                .foregroundColor(.white)
+                                .padding()
+                                .frame(width: 240, height: 50)
+                                .background(Color("lightBlue"))
+                                .cornerRadius(16)
+                        }
+                        .navigationDestination(
+                            isPresented: $navigateToGame) {
+                                ScreenTimer()
+                                
+                            }
+                        Button(action: {
+                            
+                        }
+                               
+                        ) {
+                            Text("Level 2")
+                                .font(Bobaland.Regular.font(size:30))
+                                .foregroundColor(.white)
+                                .padding()
+                                .frame(width: 240, height: 50)
+                                .background(Color("lightBlue"))
+                                .cornerRadius(16)
+                        }
+                        Button(action: {
+                            
+                        }
+                               
+                        ) {
+                            Text("Level 3")
+                                .font(Bobaland.Regular.font(size:30))
+                                .foregroundColor(.white)
+                                .padding()
+                                .frame(width: 240, height: 50)
+                                .background(Color("lightBlue"))
+                                .cornerRadius(16)
+                        }
                     }
-                           
-                    ) {
-                        Text("Level 2")
-                            .font(Bobaland.Regular.font(size:30))
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(width: 240, height: 50)
-                            .background(Color("lightBlue"))
-                            .cornerRadius(16)
-                    }
-                    Button(action: {
-                        
-                    }
-                           
-                    ) {
-                        Text("Level 3")
-                            .font(Bobaland.Regular.font(size:30))
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(width: 240, height: 50)
-                            .background(Color("lightBlue"))
-                            .cornerRadius(16)
+                    
+                    HStack()
+                    {
+                        Button(action: {
+                                  
+                               }) {
+                                   RoundedRectangle(cornerRadius: 16)
+                                       .fill(Color("lightBlue"))
+                                       .frame(width: 60, height: 60)
+                                       .overlay(Image("settings"))
+                                        
+                                       
+                               }
+                        Button(action: {
+                                
+                               }) {
+                                   RoundedRectangle(cornerRadius: 16)
+                                       .fill(Color("lightBlue"))
+                                       .frame(width: 60, height: 60)
+                                       .overlay(Image("ranking"))
+                                       
+                               }
+                        Button(action: {
+                            
+                            withAnimation {
+                                            isToggled.toggle()
+                                    }
+                                
+                        }) {
+                            
+                            RoundedRectangle(cornerRadius: 16)
+                                .fill(Color("lightBlue"))
+                                .frame(width: 60, height: 60)
+                                .overlay(Image(systemName: isToggled ? "speaker.slash.fill" : "speaker.wave.2.fill")
+                                    .font(.system(size: 30))
+                                    
+                                    .foregroundColor(.white)
+                                    .symbolEffect(.bounce , value: isToggled)
+                                    .contentTransition(.symbolEffect(.replace.wholeSymbol.byLayer)))
+                            
+                            
+                        }
                     }
                 }
-                
+               
             }
+           
         }
+        .navigationBarBackButtonHidden()
     }
 }
+    
+
 
 #Preview {
-    menuView()
+    menuView(isToggled: .constant(true))
 }
+
