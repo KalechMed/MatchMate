@@ -18,6 +18,9 @@
 		D909C4752AC06B71005420F2 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909C4742AC06B71005420F2 /* Card.swift */; };
 		D909C4772AC06D24005420F2 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909C4762AC06D24005420F2 /* CardViewModel.swift */; };
 		D909C4792AC07637005420F2 /* RandomizingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909C4782AC07637005420F2 /* RandomizingTests.swift */; };
+		D92876D92AD5FD2A005034BD /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92876D82AD5FD2A005034BD /* AudioManager.swift */; };
+		D92876DD2AD6073F005034BD /* Background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D92876DB2AD6073F005034BD /* Background.mp3 */; };
+		D92876DE2AD6073F005034BD /* GameOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D92876DC2AD6073F005034BD /* GameOver.mp3 */; };
 		D94353122AC59D5C00E327B6 /* ScreenTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94353112AC59D5C00E327B6 /* ScreenTimer.swift */; };
 		D97E43342AD4614A00FA52DE /* LoseAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97E43332AD4614A00FA52DE /* LoseAlertView.swift */; };
 		D98A01882AC081D6004DE6CB /* CountDownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A01872AC081D6004DE6CB /* CountDownTimer.swift */; };
@@ -74,6 +77,9 @@
 		D909C4742AC06B71005420F2 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		D909C4762AC06D24005420F2 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		D909C4782AC07637005420F2 /* RandomizingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizingTests.swift; sourceTree = "<group>"; };
+		D92876D82AD5FD2A005034BD /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		D92876DB2AD6073F005034BD /* Background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Background.mp3; sourceTree = "<group>"; };
+		D92876DC2AD6073F005034BD /* GameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GameOver.mp3; sourceTree = "<group>"; };
 		D94353112AC59D5C00E327B6 /* ScreenTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimer.swift; sourceTree = "<group>"; };
 		D97E43332AD4614A00FA52DE /* LoseAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseAlertView.swift; sourceTree = "<group>"; };
 		D98A01872AC081D6004DE6CB /* CountDownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownTimer.swift; sourceTree = "<group>"; };
@@ -249,6 +255,7 @@
 		D909C4662ABF40C0005420F2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D92876DA2AD5FF7C005034BD /* Music */,
 				D990CBFD2AD1E47600156C43 /* Gifs */,
 				D909C4692ABF4138005420F2 /* Info.plist */,
 				D909C4682ABF4117005420F2 /* Fonts */,
@@ -270,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				D909C46B2AC064D6005420F2 /* FontManager.swift */,
+				D92876D82AD5FD2A005034BD /* AudioManager.swift */,
 			);
 			path = Utilis;
 			sourceTree = "<group>";
@@ -298,6 +306,15 @@
 				D9AE3D962ACC698400F9DBD3 /* TimerViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D92876DA2AD5FF7C005034BD /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				D92876DB2AD6073F005034BD /* Background.mp3 */,
+				D92876DC2AD6073F005034BD /* GameOver.mp3 */,
+			);
+			path = Music;
 			sourceTree = "<group>";
 		};
 		D98A01862AC07FC6004DE6CB /* Components */ = {
@@ -443,6 +460,8 @@
 			files = (
 				D98A018E2AC09733004DE6CB /* Bobaland.ttf in Resources */,
 				D990CC032AD1E4B500156C43 /* Lost.gif in Resources */,
+				D92876DE2AD6073F005034BD /* GameOver.mp3 in Resources */,
+				D92876DD2AD6073F005034BD /* Background.mp3 in Resources */,
 				D9CEAC1F2AD582A3001269AE /* cryingCat.gif in Resources */,
 				D909C43B2ABF3CF5005420F2 /* Preview Assets.xcassets in Resources */,
 				D990CC012AD1E4AB00156C43 /* Cat.gif in Resources */,
@@ -483,6 +502,7 @@
 				D9AE3D972ACC698400F9DBD3 /* TimerViewModel.swift in Sources */,
 				D94353122AC59D5C00E327B6 /* ScreenTimer.swift in Sources */,
 				D9A12D182ACB3B56009840B1 /* randomizedPairs.swift in Sources */,
+				D92876D92AD5FD2A005034BD /* AudioManager.swift in Sources */,
 				D909C46C2AC064D6005420F2 /* FontManager.swift in Sources */,
 				D9AE3D992ACC985100F9DBD3 /* DataCaching.swift in Sources */,
 				D990CBFC2AD1E3B400156C43 /* GifView.swift in Sources */,

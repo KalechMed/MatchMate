@@ -6,12 +6,21 @@
 //
 
 import SwiftUI
+import AVFoundation
+
 
 @main
 struct MatchMateApp: App {
+    @ObservedObject private var audioManager = AudioManager.shared
+    
     var body: some Scene {
         WindowGroup {
+            
             MainView()
+                .onAppear {
+                    audioManager.playBackgroundMusic()
+                    
+                }
         }
     }
 }

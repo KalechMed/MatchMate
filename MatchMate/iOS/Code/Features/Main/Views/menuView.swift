@@ -7,10 +7,15 @@
 
 import SwiftUI
 
+
 struct menuView: View {
     
     @State var navigateToGame: Bool = false
     @Binding var isToggled: Bool
+ 
+    
+    
+    
     
     
     var body: some View {
@@ -32,11 +37,12 @@ struct menuView: View {
                     
                     Spacer()
                     
-                    VStack(spacing: 30)
+                    VStack(spacing: 40)
                     {
                         
                         Button(action: {
                             navigateToGame = true
+                            
                             
                         }
                                
@@ -54,6 +60,8 @@ struct menuView: View {
                                 ScreenTimer()
                                 
                             }
+                        
+                        
                         Button(action: {
                             
                         }
@@ -68,6 +76,7 @@ struct menuView: View {
                                 .cornerRadius(16)
                         }
                         Button(action: {
+                           
                             
                         }
                                
