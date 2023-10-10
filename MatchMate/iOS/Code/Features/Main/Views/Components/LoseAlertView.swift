@@ -25,16 +25,14 @@ struct LoseAlertView: View {
                     .foregroundColor(Color("Title"))
                     .padding(.trailing,10)
                     
-                    Image("trophy")
-                        .resizable()
-                        .frame(width: 40,height: 38)
+                    
                     
                     
                 }
                 
                 HStack()
                 {
-                    GifView("Lost")
+                    GifView("cryingCat")
                         .frame(width: 92,height: 121)
                         .padding(.trailing,10)
                     
@@ -107,7 +105,7 @@ struct LoseAlertView: View {
             .cornerRadius(26)
             
         }
-        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,maxHeight: .infinity)
+        .frame(maxWidth: .infinity,maxHeight: .infinity)
         .background(
             Color.primary.opacity(0.35))
     }

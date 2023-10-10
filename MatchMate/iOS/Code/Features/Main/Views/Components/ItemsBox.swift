@@ -18,6 +18,7 @@ struct ItemsBox: View {
     @State private var box5: [String] = []
     @State private var box6: [String] = []
     @State private var box:  [String] = ["leftBear","rightBear", "leftChick","rightChick","leftFrog","rightFrog","leftKoala","rightKoala","leftMonkey","rightMonkey","leftPig","rightPig"]
+    @State private var showTryAlert = false
     
 
     
@@ -263,6 +264,17 @@ struct ItemsBox: View {
             .navigationBarBackButtonHidden()
             
            
+            if showTryAlert {
+                TryAlertView(show: $showTryAlert)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                .background(Color.primary.opacity(0.35))
+                                .onAppear {
+                                    // Start a timer to hide the alert after 5 seconds
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                                        showTryAlert = false
+                                    }
+                                }
+                        }
                 
                
             
@@ -341,6 +353,12 @@ struct ItemsBox: View {
         
         print("\(hasBoxChanged)")
         if box.isEmpty && usedAttempts < 3 && !combinedList.elementsEqual(randomizedList) && hasBoxChanged {
+            
+            showTryAlert = true
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                
+           
             timerViewModel.timeRemaining += 15
             usedAttempts += 1
             
@@ -353,12 +371,16 @@ struct ItemsBox: View {
             box6 = []
             
             hasBoxChanged = false
+           
+            
+           
             timerViewModel.startTimer()
             box = ["leftBear","rightBear", "leftChick","rightChick","leftFrog","rightFrog","leftKoala","rightKoala","leftMonkey","rightMonkey","leftPig","rightPig"]
             
-           
+            }
         }
     }
+        
     
     
     

@@ -46,6 +46,7 @@ struct ScreenTimer: View {
             
            
         }
+        .navigationBarBackButtonHidden()
         
         
     }

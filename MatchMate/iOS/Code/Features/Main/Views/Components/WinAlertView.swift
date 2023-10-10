@@ -108,7 +108,7 @@ struct WinAlertView: View {
             .cornerRadius(26)
             
         }
-        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,maxHeight: .infinity)
+        .frame(maxWidth: .infinity,maxHeight: .infinity)
         .background(
             Color.primary.opacity(0.35))
     }
