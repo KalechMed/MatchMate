@@ -24,6 +24,12 @@ struct randomizedPairs: View {
     var body: some View {
         
         
+        ZStack()
+        {
+            RoundedRectangle(cornerRadius: 10)
+                .foregroundColor(Color("Box"))
+                .frame(width: 360 ,height: 200)
+            
             VStack(alignment: .center,spacing: 20) {
                 HStack {
                     ForEach(randomizedList.prefix(6), id: \.self) { item in
@@ -35,9 +41,9 @@ struct randomizedPairs: View {
                             .shadow(radius: 1, x: 1, y: 1)
                             .fixedSize()
                         if randomizedList.firstIndex(of: item)! % 2 == 1 {
-                           HStack()
+                            HStack()
                             {
-                        
+                                
                             }
                             .frame(width: 10)
                         }
@@ -57,10 +63,10 @@ struct randomizedPairs: View {
                         
                         if randomizedList.firstIndex(of: item)! % 2 == 1 {
                             HStack()
-                             {
-                         
-                             }
-                             .frame(width: 10)
+                            {
+                                
+                            }
+                            .frame(width: 10)
                         }
                     }
                 }
@@ -68,12 +74,9 @@ struct randomizedPairs: View {
             }
             .padding(.leading,14)
             .padding(30)
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(Color("Box")))
-            .onAppear
-        {
-            print(" salemou aalaykom \(randomizedList)")
+            
+           
+           
         }
             
         
