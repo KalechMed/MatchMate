@@ -95,7 +95,7 @@ struct WinAlertView: View {
                     }
                            
                     ) {
-                        Text("Level2")
+                        Text("Level 2")
                             .font(Bobaland.Regular.font(size:30))
                             .foregroundColor(.white)
                             .padding()

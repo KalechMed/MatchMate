@@ -12,10 +12,13 @@ import SwiftUI
 struct randomizedPairs: View {
     
     // Mark: - Variables
-    @StateObject private var viewModel = CardViewModel()
     
+    let randomizedList: [String] = getSavedRandomizedList() ?? []
+        
     
     // Mark: - Views
+    
+    
     
     
     var body: some View {
@@ -23,7 +26,7 @@ struct randomizedPairs: View {
         
             VStack(alignment: .center,spacing: 20) {
                 HStack {
-                    ForEach(viewModel.randomizedList.prefix(6), id: \.self) { item in
+                    ForEach(randomizedList.prefix(6), id: \.self) { item in
                         Image(item)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -31,7 +34,7 @@ struct randomizedPairs: View {
                             .cornerRadius(8)
                             .shadow(radius: 1, x: 1, y: 1)
                             .fixedSize()
-                        if viewModel.randomizedList.firstIndex(of: item)! % 2 == 1 {
+                        if randomizedList.firstIndex(of: item)! % 2 == 1 {
                            HStack()
                             {
                         
@@ -43,7 +46,7 @@ struct randomizedPairs: View {
                 
                 
                 HStack() {
-                    ForEach(viewModel.randomizedList.dropFirst(6), id: \.self) { item in
+                    ForEach(randomizedList.dropFirst(6), id: \.self) { item in
                         Image(item)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -52,7 +55,7 @@ struct randomizedPairs: View {
                             .shadow(radius: 1, x: 1, y: 1)
                             .fixedSize()
                         
-                        if viewModel.randomizedList.firstIndex(of: item)! % 2 == 1 {
+                        if randomizedList.firstIndex(of: item)! % 2 == 1 {
                             HStack()
                              {
                          
@@ -68,6 +71,10 @@ struct randomizedPairs: View {
             .background(
                 RoundedRectangle(cornerRadius: 10)
                     .foregroundColor(Color("Box")))
+            .onAppear
+        {
+            print(" salemou aalaykom \(randomizedList)")
+        }
             
         
         

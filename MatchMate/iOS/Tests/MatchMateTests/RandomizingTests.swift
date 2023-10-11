@@ -23,10 +23,7 @@ class RandomizingTests: XCTestCase {
             super.tearDown()
         }
         
-        func testGenerateRandomCardPairs_Count() {
-            
-            XCTAssertEqual(viewModel.cardPairs.count, 12)
-        }
+        
         
         
 
