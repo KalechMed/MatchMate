@@ -101,11 +101,15 @@ struct LoseAlertView: View {
                     .padding(.top,20)
                     .navigationDestination(isPresented: $NavigateToMenu)
                     {
-                        menuView(   isToggled: $isToggled)
+                        menuView(isToggled: $isToggled)
                     }
                     
                     
                     
+                }
+                .onAppear
+                {
+                    AudioManager.instance.playSound(sound: .GameOver)
                 }
                 .padding(.vertical,25)
                 .padding(.horizontal,30)

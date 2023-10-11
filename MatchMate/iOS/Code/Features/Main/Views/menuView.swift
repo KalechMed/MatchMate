@@ -57,10 +57,12 @@ struct menuView: View {
                         }
                         .navigationDestination(
                             isPresented: $navigateToGame) {
-                                ScreenTimer()
+                                ScreenTimer(isToggled: $isToggled)
                                 
                             }
                         
+                        
+                      
                         
                         Button(action: {
                             
@@ -118,6 +120,16 @@ struct menuView: View {
                             withAnimation {
                                             isToggled.toggle()
                                     }
+                            if isToggled {
+                                    
+                                AudioManager.instance.stopSound()
+                                
+                                } else {
+                                    
+                                    
+                                    AudioManager.instance.playSound(sound: .Background)
+                                    AudioManager.instance.setVolume(0.1)
+                                }
                                 
                         }) {
                             
@@ -138,6 +150,12 @@ struct menuView: View {
                 }
                
             }
+            .onAppear
+            {
+                AudioManager.instance.playSound(sound: .Background)
+                AudioManager.instance.setVolume(0.1)
+            }
+           
            
         }
         .navigationBarBackButtonHidden()
@@ -147,6 +165,6 @@ struct menuView: View {
 
 
 #Preview {
-    menuView(isToggled: .constant(true))
+    menuView(isToggled: .constant(false))
 }
 

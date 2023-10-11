@@ -14,6 +14,7 @@ struct ScreenTimer: View {
     @State var timeRemaining: Int = 3
     @State var navigateToGame: Bool = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @Binding var isToggled: Bool
     
     
     // Mark: - Views
@@ -39,7 +40,7 @@ struct ScreenTimer: View {
             }
             .navigationDestination(
                      isPresented: $navigateToGame) {
-                         ItemsBox(timerViewModel: TimerViewModel())
+                         ItemsBox(timerViewModel: TimerViewModel(), isToggled: $isToggled )
                           
                      }
             
@@ -57,5 +58,5 @@ struct ScreenTimer: View {
 
 
 #Preview {
-    ScreenTimer()
+    ScreenTimer(isToggled: .constant(false))
 }

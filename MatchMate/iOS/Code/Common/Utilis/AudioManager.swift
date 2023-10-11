@@ -8,46 +8,50 @@
 
 import AVFoundation
 
-class AudioManager: ObservableObject {
-    static let shared = AudioManager()
+class AudioManager  {
     
-    private var backgroundMusicPlayer: AVAudioPlayer?
-    private var gameOverMusicPlayer: AVAudioPlayer?
+    static let instance = AudioManager()
+    private var player: AVAudioPlayer?
+       
     
-    private init() {
-        // Load the background music
-        if let backgroundMusicURL = Bundle.main.url(forResource: "Background", withExtension: "mp3") {
-            do {
-                backgroundMusicPlayer = try AVAudioPlayer(contentsOf: backgroundMusicURL)
-                backgroundMusicPlayer?.numberOfLoops = -1 // Loop indefinitely
-            } catch {
-                print("Error loading background music: \(error.localizedDescription)")
-            }
+    enum SoundOption : String
+    {
+        case Background
+        case GameOver
+    }
+     
+       
+       func playSound(sound: SoundOption) {
+           
+           
+           guard let url = Bundle.main.url(forResource: sound.rawValue, withExtension: ".mp3")
+            else
+           {
+               return
+           }
+           
+           do
+           {
+               player?.stop()
+               player = try AVAudioPlayer(contentsOf: url)
+               player?.numberOfLoops = -1
+               
+               player?.play()
+                   print("sound lanched")
+               } catch {
+                   print("Error loading audio: \(error.localizedDescription)")
+               }
+           
+       }
+    
+    
+    func stopSound()
+    {
+        player?.stop()
+    }
+    
+    func setVolume(_ volume: Float) {
+            player?.volume = volume
         }
-        
-        // Load the game over music
-        if let gameOverMusicURL = Bundle.main.url(forResource: "GameOver", withExtension: "mp3") {
-            do {
-                gameOverMusicPlayer = try AVAudioPlayer(contentsOf: gameOverMusicURL)
-            } catch {
-                print("Error loading game over music: \(error.localizedDescription)")
-            }
-        }
-    }
     
-    func playBackgroundMusic() {
-        backgroundMusicPlayer?.play()
-    }
-    
-    func pauseBackgroundMusic() {
-        backgroundMusicPlayer?.pause()
-    }
-    
-    func playGameOverMusic() {
-        gameOverMusicPlayer?.play()
-    }
-    
-    func stopGameOverMusic() {
-        gameOverMusicPlayer?.stop()
-    }
 }

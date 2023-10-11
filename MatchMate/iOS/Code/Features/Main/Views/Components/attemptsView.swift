@@ -39,7 +39,7 @@ struct attemptsView: View {
                 }
             }
             .font(Bobaland.Regular.font(size:18))
-            .padding(.horizontal,50)
+            
             
             
             ZStack(alignment: .leading) {

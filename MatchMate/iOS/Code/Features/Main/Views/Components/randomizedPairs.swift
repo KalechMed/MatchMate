@@ -20,48 +20,56 @@ struct randomizedPairs: View {
     
     var body: some View {
         
-        ZStack() {
-            RoundedRectangle(cornerRadius: 10)
-                .frame(height: 200)
-                .foregroundColor(Color("Box"))
-                .padding(.horizontal,30)
-
-            VStack() {
+        
+            VStack(alignment: .center,spacing: 20) {
                 HStack {
                     ForEach(viewModel.randomizedList.prefix(6), id: \.self) { item in
                         Image(item)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(height: 52)
+                            .frame(height: 62)
                             .cornerRadius(8)
                             .shadow(radius: 1, x: 1, y: 1)
                             .fixedSize()
                         if viewModel.randomizedList.firstIndex(of: item)! % 2 == 1 {
-                        Spacer(minLength: 20)
+                           HStack()
+                            {
+                        
+                            }
+                            .frame(width: 10)
                         }
                     }
                 }
-                .padding(.horizontal,90)
+                
                 
                 HStack() {
                     ForEach(viewModel.randomizedList.dropFirst(6), id: \.self) { item in
                         Image(item)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(height: 52)
+                            .frame(height: 62)
                             .cornerRadius(8)
                             .shadow(radius: 1, x: 1, y: 1)
                             .fixedSize()
                         
                         if viewModel.randomizedList.firstIndex(of: item)! % 2 == 1 {
-                        Spacer(minLength: 0)
+                            HStack()
+                             {
+                         
+                             }
+                             .frame(width: 10)
                         }
                     }
                 }
-                .padding(.horizontal,90)
+                
             }
+            .padding(.leading,14)
+            .padding(30)
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(Color("Box")))
             
-        }
+        
         
         
         

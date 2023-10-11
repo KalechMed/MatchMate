@@ -239,6 +239,7 @@
 			children = (
 				D98A01862AC07FC6004DE6CB /* Components */,
 				D909C4352ABF3CF2005420F2 /* MainView.swift */,
+				D94353112AC59D5C00E327B6 /* ScreenTimer.swift */,
 				D9CEAC222AD58361001269AE /* menuView.swift */,
 			);
 			path = Views;
@@ -324,7 +325,6 @@
 				D98A01892AC094D0004DE6CB /* DetailsView.swift */,
 				D98A018B2AC094E6004DE6CB /* attemptsView.swift */,
 				D98A01902AC0CEA0004DE6CB /* ItemsBox.swift */,
-				D94353112AC59D5C00E327B6 /* ScreenTimer.swift */,
 				D9A12D172ACB3B56009840B1 /* randomizedPairs.swift */,
 				D990CBF92AD1BB5500156C43 /* WinAlertView.swift */,
 				D990CBFB2AD1E3B400156C43 /* GifView.swift */,

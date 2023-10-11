@@ -29,60 +29,92 @@ struct ItemsBox: View {
     @State var GameOver = false
     @State private var hasBoxChanged = true
     @State var usedAttempts : Int = 1
-    
+    @Binding var isToggled: Bool
   
     
     var body: some View {
         
         
-        ZStack()
+        ZStack(alignment:Alignment(horizontal: .trailing, vertical: .top))
         {
             
-           
+            Button(action: {
+                
+                withAnimation {
+                                isToggled.toggle()
+                        }
+                if isToggled {
+                        
+                    AudioManager.instance.stopSound()
+                    
+                    } else {
+                        
+                        
+                        AudioManager.instance.playSound(sound: .Background)
+                        AudioManager.instance.setVolume(0.1)
+                    }
+                    
+            }) {
+                
+                Image(systemName: isToggled ? "speaker.slash.fill" : "speaker.wave.2.fill")
+                    .font(.system(size: 30))
+                    
+                    .foregroundColor(Color("lightBlue"))
+                    .symbolEffect(.bounce , value: isToggled)
+                    .contentTransition(.symbolEffect(.replace.wholeSymbol.byLayer))
+                    .padding(.trailing,60)
+                    .padding(.top,4)
+                
+                
+            }
             
             
             VStack(alignment: .center)
             {
                 
-                Text("Match Mate")
-                    .font(Bobaland.Regular.font(size:40))
-                    .foregroundColor(Color("Title"))
-                    .padding(.bottom,20)
-                
-                attemptsView(usedAttempts: usedAttempts)
-                
-                if  timerViewModel.timeRemaining == 0
+                VStack()
                 {
-                    HStack()
-                    {
-                    Text("Start Matching !!")
-                        .font(Bobaland.Regular.font(size: 26))
-                        .padding(.vertical,20)
-                        .padding(.leading,30)
-                        
-                        
-                        
-                    Spacer()
-                        
-                   
-                    }
-                    .padding(.horizontal,30)
-                               
-                }
-                else {
+                    Text("Match Mate")
+                        .font(Bobaland.Regular.font(size:40))
+                        .foregroundColor(Color("Title"))
+                        .padding(.bottom,20)
                     
-                    HStack(alignment: .center) {
+                    attemptsView(usedAttempts: usedAttempts)
+                    
+                    if  timerViewModel.timeRemaining == 0
+                    {
+                        HStack()
+                        {
+                            Text("Start Matching !!")
+                                .font(Bobaland.Regular.font(size: 26))
+                                .padding(.vertical,20)
+                                
+                            
+                            
+                            
+                            Spacer()
+                            
+                            
+                        }
                         
+                        
+                    }
+                    else {
+                        
+                        HStack(alignment: .center) {
+                            
                             Text("it´s counting ! Pay attention to every detail.")
                                 .font(Bobaland.Regular.font(size: 16))
-                                
-                        Spacer()
-                        CountDownTimer(timeRemaining: $timerViewModel.timeRemaining)
-                           
-                               
+                            
+                            Spacer()
+                            CountDownTimer(timeRemaining: $timerViewModel.timeRemaining)
+                            
+                            
                         }
-                    .padding(.horizontal,50)
+                        
+                    }
                 }
+                .padding(.horizontal,78)
                 
                     
                     
@@ -98,6 +130,8 @@ struct ItemsBox: View {
                         randomizedPairs()
                         
                         
+                        
+                         
                     }
                     else if timerViewModel.timeRemaining == 0
                     {
@@ -119,8 +153,7 @@ struct ItemsBox: View {
                                 
                                 return true
                             }
-                        
-                        
+                                                
                         
                         
                     }
@@ -129,14 +162,9 @@ struct ItemsBox: View {
                     
                     
                     
-                    ZStack() {
-                        RoundedRectangle(cornerRadius: 10)
-                            .frame(maxWidth: .infinity)
-                            .foregroundColor(Color("Box"))
-                            .padding(.horizontal,20)
-                            .padding(.top,10)
+                   
                         
-                        VStack()
+                        VStack(spacing: 20)
                         {
                             HStack() {
                                 WhiteBox(items: box1)
@@ -171,9 +199,7 @@ struct ItemsBox: View {
                                         box2 = Array(totalItems.uniqued())
                                         return true
                                     }
-                            }
-                            
-                            HStack() {
+                                
                                 WhiteBox(items: box3)
                                     .dropDestination(for: String.self) { droppedItems, location in
                                         for item in droppedItems {
@@ -189,7 +215,13 @@ struct ItemsBox: View {
                                         box3 = Array(totalItems.uniqued())
                                         return true
                                     }
-                                
+                            }
+                            
+                            
+                            
+                            
+                            
+                            HStack() {
                                 
                                 WhiteBox(items: box4)
                                     .dropDestination(for: String.self) { droppedItems, location in
@@ -206,11 +238,7 @@ struct ItemsBox: View {
                                         box4 = Array(totalItems.uniqued())
                                         return true
                                     }
-                            }
-                            
-                            
-                            
-                            HStack() {
+                                
                                 WhiteBox(items: box5)
                                     .dropDestination(for: String.self) { droppedItems, location in
                                         for item in droppedItems {
@@ -246,11 +274,18 @@ struct ItemsBox: View {
                             }
                         }
                         
+                        .padding(10)
+                        .padding(.vertical,20)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundColor(Color("Box")))
                         
-                    }
+                        
+                    
                     
                     
                 }
+                
                 .onAppear
                 {
                         
@@ -260,8 +295,7 @@ struct ItemsBox: View {
                 
                 
                 
-            }
-            .navigationBarBackButtonHidden()
+            
             
            
             if showTryAlert {
@@ -280,7 +314,7 @@ struct ItemsBox: View {
             
             
             
-            VStack {
+            VStack(alignment: .center) {
                 
                 
                
@@ -292,7 +326,6 @@ struct ItemsBox: View {
                     
                     LoseAlertView(show: $GameOver)
                 }
-                    
                     
                     
                 
@@ -346,6 +379,11 @@ struct ItemsBox: View {
             
             
         }
+            
+            
+        }
+        
+        .navigationBarBackButtonHidden()
         
     }
     
@@ -381,6 +419,7 @@ struct ItemsBox: View {
         }
     }
         
+        
     
     
     
@@ -388,7 +427,7 @@ struct ItemsBox: View {
 }
 
 #Preview {
-    ItemsBox(timerViewModel: TimerViewModel())
+    ItemsBox(timerViewModel: TimerViewModel(), isToggled: .constant(true))
 }
 
 struct WhiteBox: View {
@@ -397,7 +436,7 @@ struct WhiteBox: View {
     var body: some View {
         ZStack() {
             RoundedRectangle(cornerRadius: 12)
-                .frame(width: 60,height: 60)
+                .frame(width: 80,height: 80)
                 .foregroundColor(.white)
 
             HStack(alignment: .center, spacing: 1) {
@@ -405,7 +444,7 @@ struct WhiteBox: View {
                     Image(item)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(height: 54)
+                        .frame(height: 70)
                         .shadow(radius: 1, x: 1, y: 1)
                         .draggable(item)
                 }
@@ -413,7 +452,7 @@ struct WhiteBox: View {
             }
             
         }
-        .padding(.horizontal,30)
+        .padding(.horizontal,14)
     }
 }
 
@@ -421,50 +460,61 @@ struct BigBox: View {
     let items: [String]
 
     var body: some View {
-        ZStack() {
-            RoundedRectangle(cornerRadius: 10)
-                .frame(height: 200)
-                .foregroundColor(Color("Box"))
-                .padding(.horizontal,30)
+       
+            
+                
 
-            VStack() {
+            VStack(alignment: .center , spacing: 20) {
                 HStack {
                     ForEach(items.prefix(6), id: \.self) { item in
                         Image(item)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(height: 52)
+                            .frame(height: 62)
                             .cornerRadius(8)
                             .shadow(radius: 1, x: 1, y: 1)
                             .draggable(item)
                             .fixedSize()
                         if items.firstIndex(of: item)! % 2 == 1 {
-                        Spacer(minLength: 20)
+                        
+                            HStack()
+                             {
+                         
+                             }
+                             .frame(width: 10)
                         }
                     }
                 }
-                .padding(.horizontal,90)
+               
                 
                 HStack() {
                     ForEach(items.dropFirst(6), id: \.self) { item in
                         Image(item)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(height: 52)
+                            .frame(height: 62)
                             .cornerRadius(8)
                             .shadow(radius: 1, x: 1, y: 1)
                             .draggable(item)
                             .fixedSize()
-                        
                         if items.firstIndex(of: item)! % 2 == 1 {
-                        Spacer(minLength: 4)
+                        
+                            HStack()
+                             {
+                         
+                             }
+                             .frame(width: 10)
                         }
+                        
+                       
                     }
                 }
-                .padding(.horizontal,90)
-            }
-            
         }
+            .padding(.leading,14)
+            .padding(30)
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(Color("Box")))
     }
 }
 

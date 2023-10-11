@@ -12,7 +12,7 @@ struct MainView: View {
     
     // Mark: - Variables
     
-    @State var isToggled :Bool = true
+    @State private var isToggled :Bool = false
     // Mark: - Views
     
     var body: some View {
