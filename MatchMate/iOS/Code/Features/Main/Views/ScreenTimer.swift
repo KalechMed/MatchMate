@@ -40,7 +40,7 @@ struct ScreenTimer: View {
             }
             .navigationDestination(
                      isPresented: $navigateToGame) {
-                         ItemsBox(timerViewModel: TimerViewModel(), isToggled: $isToggled )
+                         GameView(timerViewModel: TimerViewModel(), isToggled: $isToggled )
                           
                      }
             

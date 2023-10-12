@@ -12,6 +12,7 @@ struct LoseAlertView: View {
     @Binding var show : Bool
     @State var NavigateToMenu : Bool = false
     @Binding var isToggled: Bool
+    
     var body: some View {
         
         NavigationStack

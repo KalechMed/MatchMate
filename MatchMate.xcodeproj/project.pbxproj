@@ -27,7 +27,7 @@
 		D98A018A2AC094D0004DE6CB /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A01892AC094D0004DE6CB /* DetailsView.swift */; };
 		D98A018C2AC094E6004DE6CB /* attemptsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A018B2AC094E6004DE6CB /* attemptsView.swift */; };
 		D98A018E2AC09733004DE6CB /* Bobaland.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D98A018D2AC09733004DE6CB /* Bobaland.ttf */; };
-		D98A01912AC0CEA0004DE6CB /* ItemsBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A01902AC0CEA0004DE6CB /* ItemsBox.swift */; };
+		D98A01912AC0CEA0004DE6CB /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A01902AC0CEA0004DE6CB /* GameView.swift */; };
 		D98A01942AC0D5A9004DE6CB /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = D98A01932AC0D5A9004DE6CB /* Algorithms */; };
 		D990CBFA2AD1BB5500156C43 /* WinAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D990CBF92AD1BB5500156C43 /* WinAlertView.swift */; };
 		D990CBFC2AD1E3B400156C43 /* GifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D990CBFB2AD1E3B400156C43 /* GifView.swift */; };
@@ -42,6 +42,8 @@
 		D9CEAC232AD58361001269AE /* menuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CEAC222AD58361001269AE /* menuView.swift */; };
 		D9CEAC252AD58DD6001269AE /* TryAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CEAC242AD58DD6001269AE /* TryAlertView.swift */; };
 		D9CEAC272AD597FF001269AE /* BackgroundMenu.gif in Resources */ = {isa = PBXBuildFile; fileRef = D9CEAC262AD597FF001269AE /* BackgroundMenu.gif */; };
+		D9F89DBC2AD852D800027933 /* WhiteBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F89DBB2AD852D800027933 /* WhiteBox.swift */; };
+		D9F89DBE2AD8537100027933 /* OrdredPairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F89DBD2AD8537100027933 /* OrdredPairs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,7 +88,7 @@
 		D98A01892AC094D0004DE6CB /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		D98A018B2AC094E6004DE6CB /* attemptsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = attemptsView.swift; sourceTree = "<group>"; };
 		D98A018D2AC09733004DE6CB /* Bobaland.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bobaland.ttf; sourceTree = "<group>"; };
-		D98A01902AC0CEA0004DE6CB /* ItemsBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsBox.swift; sourceTree = "<group>"; };
+		D98A01902AC0CEA0004DE6CB /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		D990CBF92AD1BB5500156C43 /* WinAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinAlertView.swift; sourceTree = "<group>"; };
 		D990CBFB2AD1E3B400156C43 /* GifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifView.swift; sourceTree = "<group>"; };
 		D990CC002AD1E4AB00156C43 /* Cat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Cat.gif; sourceTree = "<group>"; };
@@ -100,6 +102,8 @@
 		D9CEAC222AD58361001269AE /* menuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuView.swift; sourceTree = "<group>"; };
 		D9CEAC242AD58DD6001269AE /* TryAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryAlertView.swift; sourceTree = "<group>"; };
 		D9CEAC262AD597FF001269AE /* BackgroundMenu.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BackgroundMenu.gif; sourceTree = "<group>"; };
+		D9F89DBB2AD852D800027933 /* WhiteBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteBox.swift; sourceTree = "<group>"; };
+		D9F89DBD2AD8537100027933 /* OrdredPairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdredPairs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +243,7 @@
 			children = (
 				D98A01862AC07FC6004DE6CB /* Components */,
 				D909C4352ABF3CF2005420F2 /* MainView.swift */,
+				D98A01902AC0CEA0004DE6CB /* GameView.swift */,
 				D94353112AC59D5C00E327B6 /* ScreenTimer.swift */,
 				D9CEAC222AD58361001269AE /* menuView.swift */,
 			);
@@ -324,13 +329,14 @@
 				D98A01872AC081D6004DE6CB /* CountDownTimer.swift */,
 				D98A01892AC094D0004DE6CB /* DetailsView.swift */,
 				D98A018B2AC094E6004DE6CB /* attemptsView.swift */,
-				D98A01902AC0CEA0004DE6CB /* ItemsBox.swift */,
 				D9A12D172ACB3B56009840B1 /* randomizedPairs.swift */,
 				D990CBF92AD1BB5500156C43 /* WinAlertView.swift */,
 				D990CBFB2AD1E3B400156C43 /* GifView.swift */,
 				D900B1F22AD23B34008A67CC /* BlurView.swift */,
 				D97E43332AD4614A00FA52DE /* LoseAlertView.swift */,
 				D9CEAC242AD58DD6001269AE /* TryAlertView.swift */,
+				D9F89DBB2AD852D800027933 /* WhiteBox.swift */,
+				D9F89DBD2AD8537100027933 /* OrdredPairs.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -502,6 +508,7 @@
 				D9AE3D972ACC698400F9DBD3 /* TimerViewModel.swift in Sources */,
 				D94353122AC59D5C00E327B6 /* ScreenTimer.swift in Sources */,
 				D9A12D182ACB3B56009840B1 /* randomizedPairs.swift in Sources */,
+				D9F89DBE2AD8537100027933 /* OrdredPairs.swift in Sources */,
 				D92876D92AD5FD2A005034BD /* AudioManager.swift in Sources */,
 				D909C46C2AC064D6005420F2 /* FontManager.swift in Sources */,
 				D9AE3D992ACC985100F9DBD3 /* DataCaching.swift in Sources */,
@@ -512,7 +519,8 @@
 				D900B1F32AD23B34008A67CC /* BlurView.swift in Sources */,
 				D909C4752AC06B71005420F2 /* Card.swift in Sources */,
 				D909C4772AC06D24005420F2 /* CardViewModel.swift in Sources */,
-				D98A01912AC0CEA0004DE6CB /* ItemsBox.swift in Sources */,
+				D98A01912AC0CEA0004DE6CB /* GameView.swift in Sources */,
+				D9F89DBC2AD852D800027933 /* WhiteBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,7 @@ import SwiftUI
 import Algorithms
     
 
-struct ItemsBox: View {
+struct GameView: View {
     
     @State private var box1: [String] = []
     @State private var box2: [String] = []
@@ -19,9 +19,6 @@ struct ItemsBox: View {
     @State private var box6: [String] = []
     @State private var box:  [String] = ["leftBear","rightBear", "leftChick","rightChick","leftFrog","rightFrog","leftKoala","rightKoala","leftMonkey","rightMonkey","leftPig","rightPig"]
     @State private var showTryAlert = false
-    
-
-    
     @ObservedObject var timerViewModel: TimerViewModel
     let randomizedList: [String] = getSavedRandomizedList() ?? []
     @State private var combinedList: [String] = []
@@ -136,7 +133,7 @@ struct ItemsBox: View {
                     else if timerViewModel.timeRemaining == 0
                     {
                         
-                        BigBox(items: box)
+                        OrdredPairs(items: box)
                             .dropDestination(for: String.self) { droppedItems, location in
                                 for item in droppedItems {
                                     box1.removeAll { $0 == item }
@@ -336,36 +333,12 @@ struct ItemsBox: View {
                 hasBoxChanged =  true
                 
             }
-            .onChange(of: box1, perform: { _ in
+            .onChange(of: [box1, box2, box3, box4, box5]) { _ in
                 // Update the combined list whenever there's a change in box1
                 combinedList = box1 + box2 + box3 + box4 + box5 + box6
                 
                 
-            })
-            .onChange(of: box2, perform: { _ in
-                // Update the combined list whenever there's a change in box2
-                combinedList = box1 + box2 + box3 + box4 + box5 + box6
-                
-                
-            })
-            .onChange(of: box3, perform: { _ in
-                // Update the combined list whenever there's a change in box3
-                combinedList = box1 + box2 + box3 + box4 + box5 + box6
-                
-                
-            })
-            .onChange(of: box4, perform: { _ in
-                // Update the combined list whenever there's a change in box4
-                combinedList = box1 + box2 + box3 + box4 + box5 + box6
-               
-                
-            })
-            .onChange(of: box5, perform: { _ in
-                // Update the combined list whenever there's a change in box5
-                combinedList = box1 + box2 + box3 + box4 + box5 + box6
-                
-                
-            })
+            }
             .onChange(of: box6, perform: { _ in
                 // Update the combined list whenever there's a change in box6
                 combinedList = box1 + box2 + box3 + box4 + box5 + box6
@@ -376,11 +349,7 @@ struct ItemsBox: View {
                 
                 
             })
-            
-            
-        
-            
-            
+      
         }
         
         .navigationBarBackButtonHidden()
@@ -427,95 +396,11 @@ struct ItemsBox: View {
 }
 
 #Preview {
-    ItemsBox(timerViewModel: TimerViewModel(), isToggled: .constant(true))
+    GameView(timerViewModel: TimerViewModel(), isToggled: .constant(true))
 }
 
-struct WhiteBox: View {
-    let items: [String]
 
-    var body: some View {
-        ZStack() {
-            RoundedRectangle(cornerRadius: 12)
-                .frame(width: 80,height: 80)
-                .foregroundColor(.white)
 
-            HStack(alignment: .center, spacing: 1) {
-                ForEach(items, id: \.self) { item in
-                    Image(item)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: 70)
-                        .shadow(radius: 1, x: 1, y: 1)
-                        .draggable(item)
-                }
-                
-            }
-            
-        }
-        .padding(.horizontal,14)
-    }
-}
 
-struct BigBox: View {
-    let items: [String]
-
-    var body: some View {
-       
-            
-                
-
-            VStack(alignment: .center , spacing: 20) {
-                HStack {
-                    ForEach(items.prefix(6), id: \.self) { item in
-                        Image(item)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(height: 62)
-                            .cornerRadius(8)
-                            .shadow(radius: 1, x: 1, y: 1)
-                            .draggable(item)
-                            .fixedSize()
-                        if items.firstIndex(of: item)! % 2 == 1 {
-                        
-                            HStack()
-                             {
-                         
-                             }
-                             .frame(width: 10)
-                        }
-                    }
-                }
-               
-                
-                HStack() {
-                    ForEach(items.dropFirst(6), id: \.self) { item in
-                        Image(item)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(height: 62)
-                            .cornerRadius(8)
-                            .shadow(radius: 1, x: 1, y: 1)
-                            .draggable(item)
-                            .fixedSize()
-                        if items.firstIndex(of: item)! % 2 == 1 {
-                        
-                            HStack()
-                             {
-                         
-                             }
-                             .frame(width: 10)
-                        }
-                        
-                       
-                    }
-                }
-        }
-            .padding(.leading,14)
-            .padding(30)
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(Color("Box")))
-    }
-}
 
 

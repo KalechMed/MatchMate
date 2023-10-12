@@ -1,46 +1,38 @@
 //
-//  randomizedPairs.swift
+//  OrdredPairs.swift
 //  MatchMate
 //
-//  Created by Mohamed  on 2/10/2023.
+//  Created by Mohamed  on 12/10/2023.
 //
 
 import SwiftUI
 
+struct OrdredPairs: View {
+    let items: [String]
 
-
-struct randomizedPairs: View {
-    
-    // Mark: - Variables
-    
-    let randomizedList: [String] = getSavedRandomizedList() ?? []
-   
-    
-    // Mark: - Views
-    
-    
-    
-    
     var body: some View {
-        
-        
+       
+            
+                
         ZStack()
         {
             RoundedRectangle(cornerRadius: 10)
                 .foregroundColor(Color("Box"))
                 .frame(width: 360 ,height: 200)
             
-            VStack(alignment: .center,spacing: 20) {
+            VStack(alignment: .center , spacing: 20) {
                 HStack {
-                    ForEach(randomizedList.prefix(6), id: \.self) { item in
+                    ForEach(items.prefix(6), id: \.self) { item in
                         Image(item)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(height: 62)
                             .cornerRadius(8)
                             .shadow(radius: 1, x: 1, y: 1)
+                            .draggable(item)
                             .fixedSize()
-                        if randomizedList.firstIndex(of: item)! % 2 == 1 {
+                        if items.firstIndex(of: item)! % 2 == 1 {
+                            
                             HStack()
                             {
                                 
@@ -52,41 +44,31 @@ struct randomizedPairs: View {
                 
                 
                 HStack() {
-                    ForEach(randomizedList.dropFirst(6), id: \.self) { item in
+                    ForEach(items.dropFirst(6), id: \.self) { item in
                         Image(item)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(height: 62)
                             .cornerRadius(8)
                             .shadow(radius: 1, x: 1, y: 1)
+                            .draggable(item)
                             .fixedSize()
-                        
-                        if randomizedList.firstIndex(of: item)! % 2 == 1 {
+                        if items.firstIndex(of: item)! % 2 == 1 {
+                            
                             HStack()
                             {
                                 
                             }
                             .frame(width: 10)
                         }
+                        
+                        
                     }
                 }
-                
             }
             .padding(.leading,14)
             .padding(30)
             
-           
-           
         }
-            
-        
-        
-        
-        
     }
-}
-
-
-#Preview {
-    randomizedPairs()
 }

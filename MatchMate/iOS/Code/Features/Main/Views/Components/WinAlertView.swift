@@ -14,6 +14,7 @@ struct WinAlertView: View {
     @Binding var usedAttempts : Int
     @Binding var show : Bool
     @State var isToggled: Bool = false
+  
     
     var body: some View {
         
@@ -125,6 +126,13 @@ struct WinAlertView: View {
                 Color.primary.opacity(0.35))
         }
     }
+    
+    func formatTime(_ timeInterval: TimeInterval) -> String {
+           let seconds = Int(timeInterval)
+           let minutes = seconds / 60
+           let remainingSeconds = seconds % 60
+           return String(format: "%02d:%02d", minutes, remainingSeconds)
+       }
 }
 
 #Preview {

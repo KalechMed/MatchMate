@@ -10,7 +10,7 @@ import Combine
 
 struct CountDownTimer: View {
     
-    @Binding var timeRemaining: Int // Declare timeRemaining as a @Binding property
+    @Binding var timeRemaining: Int
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
@@ -18,8 +18,8 @@ struct CountDownTimer: View {
         Text("\(timeRemaining) s")
             .font(Bobaland.Regular.font(size: 40))
             .onReceive(timer) { _ in
-                if self.timeRemaining > 0 { // Use 'self' to access the property
-                    self.timeRemaining -= 1 // Mutate the property using 'self'
+                if self.timeRemaining > 0 {
+                    self.timeRemaining -= 1
                 }
             }
     }

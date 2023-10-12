@@ -11,11 +11,7 @@ class CardViewModel: ObservableObject {
      var randomizedList: [String] = []
    
     
-    init() {
-       
-            generateRandomCardPairs()
-        
-    }
+  
     
     func generateRandomCardPairs() {
         
