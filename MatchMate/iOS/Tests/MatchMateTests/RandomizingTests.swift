@@ -11,11 +11,11 @@ import SwiftUI
 
 class RandomizingTests: XCTestCase {
 
-    var viewModel: CardViewModel!
+    var viewModel: GameViewModel!
         
         override func setUp() {
             super.setUp()
-            viewModel = CardViewModel()
+            viewModel = GameViewModel()
         }
         
         override func tearDown() {

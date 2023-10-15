@@ -9,11 +9,17 @@ import SwiftUI
 
 
 struct WinAlertView: View {
-
+    
+    // Mark: - Variables
+    
     @State var navigateToMenu: Bool = false
     @Binding var usedAttempts : Int
     @Binding var show : Bool
     @State var isToggled: Bool = false
+    
+    // Mark: - Views
+
+    
   
     
     var body: some View {
@@ -107,7 +113,7 @@ struct WinAlertView: View {
                     .padding(.top,20)
                     .navigationDestination(
                         isPresented: $navigateToMenu) {
-                            menuView(  isToggled: $isToggled)
+                            MenuView(  isToggled: $isToggled)
                             
                         }
                     
@@ -127,12 +133,7 @@ struct WinAlertView: View {
         }
     }
     
-    func formatTime(_ timeInterval: TimeInterval) -> String {
-           let seconds = Int(timeInterval)
-           let minutes = seconds / 60
-           let remainingSeconds = seconds % 60
-           return String(format: "%02d:%02d", minutes, remainingSeconds)
-       }
+    
 }
 
 #Preview {

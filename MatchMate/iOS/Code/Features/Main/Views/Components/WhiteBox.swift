@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct WhiteBox: View {
+    
+    // Mark: - Variables
+    
     let items: [String]
-
+    // Mark: - Views
+    
     var body: some View {
         ZStack() {
             RoundedRectangle(cornerRadius: 12)

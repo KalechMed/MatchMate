@@ -11,6 +11,9 @@ import Algorithms
 
 struct GameView: View {
     
+    
+    // Mark: - Variables
+   
     @State private var box1: [String] = []
     @State private var box2: [String] = []
     @State private var box3: [String] = []
@@ -18,6 +21,7 @@ struct GameView: View {
     @State private var box5: [String] = []
     @State private var box6: [String] = []
     @State private var box:  [String] = ["leftBear","rightBear", "leftChick","rightChick","leftFrog","rightFrog","leftKoala","rightKoala","leftMonkey","rightMonkey","leftPig","rightPig"]
+    
     @State private var showTryAlert = false
     @ObservedObject var timerViewModel: TimerViewModel
     let randomizedList: [String] = getSavedRandomizedList() ?? []
@@ -28,6 +32,7 @@ struct GameView: View {
     @State var usedAttempts : Int = 1
     @Binding var isToggled: Bool
   
+    // Mark: - Views
     
     var body: some View {
         
@@ -76,7 +81,7 @@ struct GameView: View {
                         .foregroundColor(Color("Title"))
                         .padding(.bottom,20)
                     
-                    attemptsView(usedAttempts: usedAttempts)
+                    attemptsView(gameViewModel: GameViewModel())
                     
                     if  timerViewModel.timeRemaining == 0
                     {
@@ -133,7 +138,7 @@ struct GameView: View {
                     else if timerViewModel.timeRemaining == 0
                     {
                         
-                        OrdredPairs(items: box)
+                        OrderedPairs(items: box)
                             .dropDestination(for: String.self) { droppedItems, location in
                                 for item in droppedItems {
                                     box1.removeAll { $0 == item }
@@ -300,7 +305,7 @@ struct GameView: View {
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                                 .background(Color.primary.opacity(0.35))
                                 .onAppear {
-                                    // Start a timer to hide the alert after 5 seconds
+                                   
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                                         showTryAlert = false
                                     }
@@ -333,13 +338,14 @@ struct GameView: View {
                 hasBoxChanged =  true
                 
             }
-            .onChange(of: [box1, box2, box3, box4, box5]) { _ in
+            .onChange(of: [box1, box2, box3, box4, box5]) { 
                 // Update the combined list whenever there's a change in box1
                 combinedList = box1 + box2 + box3 + box4 + box5 + box6
                 
                 
             }
-            .onChange(of: box6, perform: { _ in
+            .onChange(of: box6)
+            {
                 // Update the combined list whenever there's a change in box6
                 combinedList = box1 + box2 + box3 + box4 + box5 + box6
                 
@@ -348,7 +354,7 @@ struct GameView: View {
                 print("\(hasBoxChanged)")
                 
                 
-            })
+            }
       
         }
         

@@ -1,40 +1,30 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  MatchMate
 //
-//  Created by Mohamed  on 23/9/2023.
+//  Created by Mohamed  on 15/10/2023.
 //
 
 import SwiftUI
 
-
 struct MainView: View {
     
     // Mark: - Variables
-    
-    @State private var isToggled :Bool = false
-    @ObservedObject var cardViewModel = CardViewModel()
+       
+       @State private var isToggled :Bool = false
+       @ObservedObject var gameViewModel = GameViewModel()
 
-        init() {
-            cardViewModel.generateRandomCardPairs()
-        }
-    // Mark: - Views
+           init() {
+               gameViewModel.generateRandomCardPairs()
+           }
+       // Mark: - Views
     
     var body: some View {
         
+        MenuView(isToggled: $isToggled)
         
-        NavigationView
-        {
-            menuView(isToggled: $isToggled)
-            
-            
-        }
     }
-        
-       
-    
 }
-        
 
 #Preview {
     MainView()

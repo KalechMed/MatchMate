@@ -37,7 +37,7 @@ class AudioManager  {
                player?.numberOfLoops = -1
                
                player?.play()
-                   print("sound lanched")
+                   print("sound launched")
                } catch {
                    print("Error loading audio: \(error.localizedDescription)")
                }

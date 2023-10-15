@@ -18,9 +18,6 @@ struct randomizedPairs: View {
     
     // Mark: - Views
     
-    
-    
-    
     var body: some View {
         
         

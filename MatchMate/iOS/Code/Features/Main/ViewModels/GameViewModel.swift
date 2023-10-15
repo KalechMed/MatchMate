@@ -1,5 +1,5 @@
 //
-//  CardViewModel.swift
+//  GameViewModel.swift
 //  MatchMate
 //
 //  Created by Mohamed  on 24/9/2023.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-class CardViewModel: ObservableObject {
-     var randomizedList: [String] = []
-   
+class GameViewModel: ObservableObject {
+    var randomizedList: [String] = []
+    @Published var usedAttempts: Int = 0
     
   
     
@@ -29,9 +29,17 @@ class CardViewModel: ObservableObject {
             randomizedList.append(right)
         }
         
-        print("generate random card pairs in cardview model")
+        print("generate random card pairs in card view model")
         saveRandomizedList(randomizedList)
        
        
     }
+    
+    func calculateUsedBarWidth() -> CGFloat {
+            let maxAttempts = 3
+            let percentage = CGFloat(usedAttempts) / CGFloat(maxAttempts)
+            return percentage * 300
+        }
+    
+    
 }

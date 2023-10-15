@@ -7,9 +7,15 @@
 
 import SwiftUI
 
-struct OrdredPairs: View {
-    let items: [String]
+struct OrderedPairs: View {
+    
+    // Mark: - Variables
 
+    let items: [String]
+    
+    
+    // Mark: - Views
+    
     var body: some View {
        
             
@@ -33,11 +39,8 @@ struct OrdredPairs: View {
                             .fixedSize()
                         if items.firstIndex(of: item)! % 2 == 1 {
                             
-                            HStack()
-                            {
-                                
-                            }
-                            .frame(width: 10)
+                            Spacer().frame(width: 10)
+                           
                         }
                     }
                 }
@@ -55,11 +58,8 @@ struct OrdredPairs: View {
                             .fixedSize()
                         if items.firstIndex(of: item)! % 2 == 1 {
                             
-                            HStack()
-                            {
-                                
-                            }
-                            .frame(width: 10)
+                            Spacer().frame(width: 10)
+                            
                         }
                         
                         

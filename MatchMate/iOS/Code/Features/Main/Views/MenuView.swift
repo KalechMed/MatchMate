@@ -8,17 +8,22 @@
 import SwiftUI
 
 
-struct menuView: View {
+struct MenuView: View {
+    
+    // Mark: - Variables
+    
     
     @State var navigateToGame: Bool = false
     @Binding var isToggled: Bool
- 
+    @ObservedObject var gameViewModel = GameViewModel()
     
     
     
-    
-    
+    // Mark: - Views
     var body: some View {
+        
+        
+        
         
         NavigationStack
         {
@@ -152,6 +157,7 @@ struct menuView: View {
             }
             .onAppear
             {
+                gameViewModel.generateRandomCardPairs()
                 AudioManager.instance.playSound(sound: .Background)
                 AudioManager.instance.setVolume(0.1)
             }
@@ -165,6 +171,6 @@ struct menuView: View {
 
 
 #Preview {
-    menuView(isToggled: .constant(false))
+    MenuView(isToggled: .constant(true))
 }
 
