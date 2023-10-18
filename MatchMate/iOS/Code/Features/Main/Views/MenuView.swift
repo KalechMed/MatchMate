@@ -14,6 +14,7 @@ struct MenuView: View {
     
     
     @State var navigateToGame: Bool = false
+    @State var navigateToStats: Bool = false
     @Binding var isToggled: Bool
     @ObservedObject var gameViewModel = GameViewModel()
     
@@ -113,6 +114,7 @@ struct MenuView: View {
                                        
                                }
                         Button(action: {
+                            navigateToStats = true
                                 
                                }) {
                                    RoundedRectangle(cornerRadius: 16)
@@ -121,6 +123,12 @@ struct MenuView: View {
                                        .overlay(Image("ranking"))
                                        
                                }
+                               .navigationDestination(
+                                   isPresented: $navigateToStats) {
+                                       ScoreBoardView(isToggled: $isToggled)
+                                       
+                                   }
+                        
                         Button(action: {
                             
                             withAnimation {

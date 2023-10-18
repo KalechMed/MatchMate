@@ -6,8 +6,7 @@
 //
 
 import SwiftUI
-import AVFoundation
-
+import SwiftData
 
 @main
 struct MatchMateApp: App {
@@ -17,6 +16,9 @@ struct MatchMateApp: App {
         WindowGroup {
             
             MainView()
+                .modelContainer(for :[Players.self])
+            
+            
                
         }
     }

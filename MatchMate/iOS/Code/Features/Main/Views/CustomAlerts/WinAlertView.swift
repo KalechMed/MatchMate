@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 
 struct WinAlertView: View {
@@ -18,8 +19,8 @@ struct WinAlertView: View {
     @State var isToggled: Bool = false
     @EnvironmentObject var timerViewModel: TimerViewModel
     @ObservedObject var gameViewModel = GameViewModel()
-    
     var gameTime: Int
+    @Environment(\.modelContext) var context
     
     
     
@@ -140,8 +141,14 @@ struct WinAlertView: View {
                 Color.primary.opacity(0.35))
             .onAppear
             {
+                
+            
                 let score = gameViewModel.calculateScore(attempts: usedAttempts, gameTime: gameTime)
                 print("score:\(score)")
+                let player = Players(Score: score,attempts: usedAttempts,gameTime: gameTime)
+                context.insert(player)
+                
+                
             }
            
         }

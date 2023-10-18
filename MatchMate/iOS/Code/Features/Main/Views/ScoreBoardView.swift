@@ -6,8 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ScoreBoardView: View {
+    
+    @State var backToMenu: Bool = false
+    @Binding var isToggled: Bool
+    
+    @Query() var players:[Players]
     var body: some View {
         
         GeometryReader
@@ -24,12 +30,20 @@ struct ScoreBoardView: View {
                     
                     HStack(alignment: .center,spacing: 20)
                     {
-                        Image("ranking")
+                        Image("Arrow")
                             .resizable()
-                            .frame(width: 30, height: 30)
-                            .colorMultiply(Color("Title"))
+                            .frame(width: 24, height: 24)
+                            .onTapGesture {
+                                backToMenu = true
+                            }
+                            .navigationDestination(
+                                isPresented: $backToMenu) {
+                                    MenuView(isToggled: $isToggled)
+                                    
+                                }
+                           
                         
-                        Text("Stats")
+                        Text("Menu")
                             .font(Bobaland.Regular.font(size:24))
                             .foregroundColor(Color("Title"))
                         
@@ -57,34 +71,52 @@ struct ScoreBoardView: View {
                                 
                                 HStack()
                                 {
-                                    Text("29")
-                                    Text("Points")
+                                  
+                                    if let HighestScore = players.max(by: { $0.Score < $1.Score }) {
+                                        HStack()
+                                        {
+                                            Text("\(HighestScore.Score)")
+                                            Text("Points")
+                                        }
+                                        
+                                            .font(Bobaland.Regular.font(size:44))
+                                            .foregroundColor(Color("Title"))
+                                    } else {
+                                        Text("No Scores Available")
+                                            .font(Bobaland.Regular.font(size:24))
+                                            .foregroundColor(Color("GrayTxt"))
+                                        
+                                    }
+        
+                                    
                                        
                                 }
-                                .font(Bobaland.Regular.font(size:44))
-                                .foregroundColor(Color("Title"))
+                                
                                 
                                 
                                 VStack()
                                 {
-                                    HStack()
-                                    {
-                                        Text("1")
-                                        Text("Attempts")
+                                    if let HighestScore = players.max(by: { $0.Score < $1.Score }) {
+                                        HStack()
+                                        {
+                                            Text("\(HighestScore.attempts)")
+                                            Text("Attempts")
+                                            
+                                        }
+                                        
+                                        
+                                        HStack()
+                                        {
+                                            Text("\(HighestScore.gameTime)")
+                                            Text("Seconds")
+                                            
+                                        }
                                         
                                     }
-                                   
-                                    
-                                    HStack()
-                                    {
-                                        Text("19")
-                                        Text("Seconds")
-                                        
-                                    }
-                                    
                                 }
                                 .font(Bobaland.Regular.font(size:20))
                                 .foregroundColor(Color("GrayTxt"))
+                                    
                             }
                             
                             
@@ -114,11 +146,11 @@ struct ScoreBoardView: View {
                     }
                 }
                 
-            }
+            }.navigationBarBackButtonHidden()
         }
     }
 }
 
 #Preview {
-    ScoreBoardView()
+    ScoreBoardView(isToggled: .constant(true))
 }

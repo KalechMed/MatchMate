@@ -42,6 +42,7 @@
 		D9CEAC232AD58361001269AE /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CEAC222AD58361001269AE /* MenuView.swift */; };
 		D9CEAC252AD58DD6001269AE /* TryAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CEAC242AD58DD6001269AE /* TryAlertView.swift */; };
 		D9CEAC272AD597FF001269AE /* BackgroundMenu.gif in Resources */ = {isa = PBXBuildFile; fileRef = D9CEAC262AD597FF001269AE /* BackgroundMenu.gif */; };
+		D9DC1FC12AE00ADE00A1A140 /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DC1FC02AE00ADE00A1A140 /* Players.swift */; };
 		D9F89DBC2AD852D800027933 /* WhiteBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F89DBB2AD852D800027933 /* WhiteBox.swift */; };
 		D9F89DBE2AD8537100027933 /* OrderedPairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F89DBD2AD8537100027933 /* OrderedPairs.swift */; };
 /* End PBXBuildFile section */
@@ -102,6 +103,7 @@
 		D9CEAC222AD58361001269AE /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		D9CEAC242AD58DD6001269AE /* TryAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryAlertView.swift; sourceTree = "<group>"; };
 		D9CEAC262AD597FF001269AE /* BackgroundMenu.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BackgroundMenu.gif; sourceTree = "<group>"; };
+		D9DC1FC02AE00ADE00A1A140 /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
 		D9F89DBB2AD852D800027933 /* WhiteBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteBox.swift; sourceTree = "<group>"; };
 		D9F89DBD2AD8537100027933 /* OrderedPairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedPairs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -304,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				D909C4742AC06B71005420F2 /* Card.swift */,
+				D9DC1FC02AE00ADE00A1A140 /* Players.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				D9A24CF82ADB6C540070062A /* MainView.swift in Sources */,
 				D990CBFA2AD1BB5500156C43 /* WinAlertView.swift in Sources */,
 				D98A018A2AC094D0004DE6CB /* DetailsView.swift in Sources */,
+				D9DC1FC12AE00ADE00A1A140 /* Players.swift in Sources */,
 				D97E43342AD4614A00FA52DE /* LoseAlertView.swift in Sources */,
 				D98A018C2AC094E6004DE6CB /* attemptsView.swift in Sources */,
 				D9AE3D972ACC698400F9DBD3 /* TimerViewModel.swift in Sources */,

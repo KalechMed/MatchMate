@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct MainView: View {
     
     // Mark: - Variables
@@ -22,6 +23,9 @@ struct MainView: View {
     var body: some View {
         
         MenuView(isToggled: $isToggled)
+           
+        
+        
         
     }
 }
