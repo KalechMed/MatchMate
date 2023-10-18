@@ -15,6 +15,7 @@ struct ScreenTimer: View {
     @State var navigateToGame: Bool = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @Binding var isToggled: Bool
+   
     
     
     // Mark: - Views
@@ -27,6 +28,7 @@ struct ScreenTimer: View {
                     .font(Bobaland.Regular.font(size: 200))
                 
             }
+           
             .onReceive(timer) { _ in
                 if self.timeRemaining > 0 {
                     self.timeRemaining -= 1
@@ -42,7 +44,7 @@ struct ScreenTimer: View {
                      isPresented: $navigateToGame) {
                          GameView(timerViewModel: TimerViewModel(), isToggled: $isToggled )
                           
-                     }
+            }
             
             
            

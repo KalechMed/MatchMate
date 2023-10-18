@@ -18,7 +18,7 @@ struct TryAlertView: View {
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
             VStack(alignment: .center, spacing: 48) {
-                GifView("try")
+                GifManager("try")
                     .frame(width: 160, height: 160)
                 
                 VStack(spacing: 20) {

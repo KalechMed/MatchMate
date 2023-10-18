@@ -9,8 +9,11 @@ import Foundation
 
 class TimerViewModel: ObservableObject {
     @Published var timeRemaining: Int = 15
-    
     private var timer: Timer?
+    @Published var gameTime: Int = 0
+    
+    private var gameTimer: Timer?
+    private var isPaused = false
 
     init() {
         startTimer()
@@ -27,10 +30,31 @@ class TimerViewModel: ObservableObject {
         }
     }
     
-    func formatTime(_ timeInterval: TimeInterval) -> String {
-           let seconds = Int(timeInterval)
-           let minutes = seconds / 60
-           let remainingSeconds = seconds % 60
-           return String(format: "%02d:%02d", minutes, remainingSeconds)
+    func startGameTimer() {
+        
+        if !isPaused {
+                gameTime = 0
+            }
+        
+        gameTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+            guard let self = self else { return }
+            if self.gameTime >= 0 &&  !self.isPaused
+             {
+                self.gameTime += 1
+                print("Timer fired. Current gameTime: \(self.gameTime)")
+            } 
+        }
+        print("Game timer started.")
+    }
+    
+    
+        
+        
+    func stopGameTimer() {
+        print("game time \(gameTime)")
+           isPaused = true
        }
+    
+    
+   
 }

@@ -19,6 +19,7 @@ struct MenuView: View {
     
     
     
+    
     // Mark: - Views
     var body: some View {
         
@@ -29,7 +30,7 @@ struct MenuView: View {
         {
             ZStack(alignment:Alignment(horizontal: .center, vertical: .center)) {
                 
-                GifView("BackgroundMenu")
+                GifManager("BackgroundMenu")
                 .edgesIgnoringSafeArea(.all)
                 
                 VStack(alignment: .center)
@@ -46,11 +47,11 @@ struct MenuView: View {
                     {
                         
                         Button(action: {
+                          
                             navigateToGame = true
                             
-                            
+                          
                         }
-                               
                         ) {
                             Text("Level 1")
                                 .font(Bobaland.Regular.font(size:30))

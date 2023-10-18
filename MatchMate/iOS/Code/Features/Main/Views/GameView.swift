@@ -23,7 +23,7 @@ struct GameView: View {
     @State private var box:  [String] = ["leftBear","rightBear", "leftChick","rightChick","leftFrog","rightFrog","leftKoala","rightKoala","leftMonkey","rightMonkey","leftPig","rightPig"]
     
     @State private var showTryAlert = false
-    @ObservedObject var timerViewModel: TimerViewModel
+    @ObservedObject var timerViewModel = TimerViewModel()
     let randomizedList: [String] = getSavedRandomizedList() ?? []
     @State private var combinedList: [String] = []
     @State var Win = false
@@ -31,6 +31,7 @@ struct GameView: View {
     @State private var hasBoxChanged = true
     @State var usedAttempts : Int = 1
     @Binding var isToggled: Bool
+    
   
     // Mark: - Views
     
@@ -288,12 +289,7 @@ struct GameView: View {
                     
                 }
                 
-                .onAppear
-                {
-                    
-                    
-                    print("randomizedList in itemBox \(randomizedList)")
-                }
+               
                 
                 
             }
@@ -321,7 +317,13 @@ struct GameView: View {
                 
                
                 if combinedList.elementsEqual(randomizedList) && usedAttempts <= 3 {
-                    WinAlertView(usedAttempts:$usedAttempts , show: $Win)
+                    WinAlertView(usedAttempts:$usedAttempts , show: $Win,gameTime:timerViewModel.gameTime)
+                        .environmentObject(TimerViewModel())
+                        .onAppear
+                    {
+                        timerViewModel.stopGameTimer()
+                        print("gameTime gameTime gameTime\(timerViewModel.gameTime)")
+                    }
                     
                     
                 } else if box.isEmpty && usedAttempts >= 3 {
@@ -333,29 +335,32 @@ struct GameView: View {
                 
             }
             .onAppear {
-                // Initialize the combined list on appear
+                
                 combinedList = box1 + box2 + box3 + box4 + box5 + box6
                 hasBoxChanged =  true
                 
             }
             .onChange(of: [box1, box2, box3, box4, box5]) { 
-                // Update the combined list whenever there's a change in box1
+               
                 combinedList = box1 + box2 + box3 + box4 + box5 + box6
                 
                 
             }
             .onChange(of: box6)
             {
-                // Update the combined list whenever there's a change in box6
+                
                 combinedList = box1 + box2 + box3 + box4 + box5 + box6
                 
                 hasBoxChanged = true
                 checkGameStatus()
-                print("\(hasBoxChanged)")
+               
                 
                 
             }
       
+        }
+        .onAppear{
+            timerViewModel.startGameTimer()
         }
         
         .navigationBarBackButtonHidden()
@@ -364,7 +369,7 @@ struct GameView: View {
     
     func checkGameStatus() {
         
-        print("\(hasBoxChanged)")
+       
         if box.isEmpty && usedAttempts < 3 && !combinedList.elementsEqual(randomizedList) && hasBoxChanged {
             
             showTryAlert = true

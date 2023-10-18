@@ -31,38 +31,16 @@ struct LoseAlertView: View {
                             .padding(.trailing, 10)
                     }
                     
-                    HStack() {
-                        GifView("cryingCat")
+                    HStack(spacing: 10) {
+                        GifManager("cryingCat")
                             .frame(width: 92, height: 121)
                             .padding(.trailing, 10)
                         
-                        VStack() {
-                            HStack() {
-                                Image("attempts")
-                                    .resizable()
-                                    .frame(width: 24, height: 26)
-                                    .padding(.trailing, 10)
-                                Text("3")
-                                    .font(Bobaland.Regular.font(size: 30))
-                                    .foregroundColor(Color("GrayTxt"))
-                                Text("Attempts")
-                                    .font(Bobaland.Regular.font(size: 20))
-                                    .foregroundColor(Color("GrayTxt"))
-                            }
-                            
-                            HStack() {
-                                Image("seconds")
-                                    .resizable()
-                                    .frame(width: 26, height: 26)
-                                    .padding(.trailing, 10)
-                                Text("2")
-                                    .font(Bobaland.Regular.font(size: 30))
-                                    .foregroundColor(Color("GrayTxt"))
-                                Text("Seconds  ")
-                                    .font(Bobaland.Regular.font(size: 20))
-                                    .foregroundColor(Color("GrayTxt"))
-                            }
-                        }
+                        Text("Oops, You've Run Out of Attempts.")
+                            .font(Bobaland.Regular.font(size: 20))
+                            .foregroundColor(Color("GrayTxt"))
+                            .frame(width: 106)
+                     
                     }
                     
                     Button(action: {

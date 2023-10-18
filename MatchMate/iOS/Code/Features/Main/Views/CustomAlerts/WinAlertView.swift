@@ -16,6 +16,13 @@ struct WinAlertView: View {
     @Binding var usedAttempts : Int
     @Binding var show : Bool
     @State var isToggled: Bool = false
+    @EnvironmentObject var timerViewModel: TimerViewModel
+    @ObservedObject var gameViewModel = GameViewModel()
+    
+    var gameTime: Int
+    
+    
+    
     
     // Mark: - Views
 
@@ -47,7 +54,7 @@ struct WinAlertView: View {
                     
                     HStack()
                     {
-                        GifView("Cat")
+                        GifManager("Cat")
                             .frame(width: 92,height: 121)
                             .padding(.trailing,10)
                         
@@ -81,7 +88,7 @@ struct WinAlertView: View {
                                 
                                 
                                 
-                                Text("2")
+                                Text("\(gameTime)")
                                     .font(Bobaland.Regular.font(size:30))
                                     .foregroundColor(Color("GrayTxt"))
                                 Text("Seconds  ")
@@ -90,6 +97,7 @@ struct WinAlertView: View {
                                 
                                 
                             }
+                        
                             
                             
                             
@@ -130,6 +138,12 @@ struct WinAlertView: View {
             .frame(maxWidth: .infinity,maxHeight: .infinity)
             .background(
                 Color.primary.opacity(0.35))
+            .onAppear
+            {
+                let score = gameViewModel.calculateScore(attempts: usedAttempts, gameTime: gameTime)
+                print("score:\(score)")
+            }
+           
         }
     }
     
@@ -137,5 +151,6 @@ struct WinAlertView: View {
 }
 
 #Preview {
-    WinAlertView(usedAttempts: .constant(3), show: .constant(true))
+    WinAlertView(usedAttempts: .constant(3), show: .constant(true), gameTime: 10)
+        .environmentObject(TimerViewModel())
 }

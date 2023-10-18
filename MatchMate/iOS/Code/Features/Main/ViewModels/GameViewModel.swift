@@ -9,8 +9,8 @@ import SwiftUI
 
 class GameViewModel: ObservableObject {
     var randomizedList: [String] = []
-    @Published var usedAttempts: Int = 0
-    
+    @Published var usedAttempts: Int = 1
+    @Published var showTryAlert = false
   
     
     func generateRandomCardPairs() {
@@ -29,7 +29,7 @@ class GameViewModel: ObservableObject {
             randomizedList.append(right)
         }
         
-        print("generate random card pairs in card view model")
+        
         saveRandomizedList(randomizedList)
        
        
@@ -39,7 +39,16 @@ class GameViewModel: ObservableObject {
             let maxAttempts = 3
             let percentage = CGFloat(usedAttempts) / CGFloat(maxAttempts)
             return percentage * 300
-        }
+    }
+    
+   
+    func calculateScore(attempts: Int, gameTime: Int) -> Int {
+        
+            let scoreReductionPerAttempt = 10
+            let baseScore = 300
+            let score = max(baseScore - attempts * scoreReductionPerAttempt - gameTime, 0)
+            return score
+    }
     
     
 }
