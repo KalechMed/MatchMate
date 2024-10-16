@@ -7,26 +7,16 @@
 
 import SwiftUI
 
-
 struct MainView: View {
-    
-    // Mark: - Variables
-       
-       @State private var isToggled :Bool = false
-       @ObservedObject var gameViewModel = GameViewModel()
-
-           init() {
-               gameViewModel.generateRandomCardPairs()
-           }
-       // Mark: - Views
-    
+    // MARK: - Variables
+    @State private var isToggled: Bool = false
+    @ObservedObject var gameViewModel = GameViewModel()
+    init() {
+        gameViewModel.generateRandomCardPairs()
+    }
+    // MARK: - Views
     var body: some View {
-        
         MenuView(isToggled: $isToggled)
-           
-        
-        
-        
     }
 }
 

@@ -11,7 +11,4 @@ struct Card: Identifiable {
     let id = UUID()
     let leftSideImage: Image
     let rightSideImage: Image
-    
-   
-    
 }

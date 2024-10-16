@@ -7,16 +7,12 @@
 
 import SwiftUI
 
-
-enum Bobaland{
-    case Regular
-    
-    func font(size :CGFloat) -> Font
-    {
+enum Bobaland {
+    case regular
+    func font(size: CGFloat) -> Font {
         switch self {
-        case .Regular:
-            return .custom("Bobaland",size:size)
-            
+        case .regular:
+            return .custom("Bobaland", size: size)
         }
     }
 }

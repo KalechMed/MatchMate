@@ -8,18 +8,14 @@
 import SwiftUI
 
 struct WhiteBox: View {
-    
-    // Mark: - Variables
-    
+    // MARK: - Variables
     let items: [String]
-    // Mark: - Views
-    
+    // MARK: - Views
     var body: some View {
-        ZStack() {
+        ZStack {
             RoundedRectangle(cornerRadius: 12)
-                .frame(width: 80,height: 80)
+                .frame(width: 80, height: 80)
                 .foregroundColor(.white)
-
             HStack(alignment: .center, spacing: 1) {
                 ForEach(items, id: \.self) { item in
                     Image(item)
@@ -29,12 +25,8 @@ struct WhiteBox: View {
                         .shadow(radius: 1, x: 1, y: 1)
                         .draggable(item)
                 }
-                
             }
-            
         }
-        .padding(.horizontal,14)
+        .padding(.horizontal, 14)
     }
 }
-
-

@@ -11,15 +11,12 @@ class TimerViewModel: ObservableObject {
     @Published var timeRemaining: Int = 15
     private var timer: Timer?
     @Published var gameTime: Int = 0
-    
     private var gameTimer: Timer?
     private var isPaused = false
-
     init() {
         startTimer()
     }
-
-     func startTimer() {
+    func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
             guard let self = self else { return }
             if self.timeRemaining > 0 {
@@ -29,32 +26,20 @@ class TimerViewModel: ObservableObject {
             }
         }
     }
-    
     func startGameTimer() {
-        
         if !isPaused {
-                gameTime = 0
-            }
-        
+            gameTime = 0
+        }
         gameTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
             guard let self = self else { return }
-            if self.gameTime >= 0 &&  !self.isPaused
-             {
+            if self.gameTime >= 0 &&  !self.isPaused {
                 self.gameTime += 1
-                print("Timer fired. Current gameTime: \(self.gameTime)")
-            } 
+            }
         }
         print("Game timer started.")
     }
-    
-    
-        
-        
     func stopGameTimer() {
-        print("game time \(gameTime)")
-           isPaused = true
-       }
-    
-    
-   
+        print("game time stopped \(gameTime)")
+        isPaused = true
+    }
 }

@@ -9,14 +9,11 @@ import SwiftUI
 import Combine
 
 struct CountDownTimer: View {
-    
     @Binding var timeRemaining: Int
-    
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-
     var body: some View {
         Text("\(timeRemaining) s")
-            .font(Bobaland.Regular.font(size: 40))
+            .font(Bobaland.regular.font(size: 40))
             .onReceive(timer) { _ in
                 if self.timeRemaining > 0 {
                     self.timeRemaining -= 1
@@ -27,5 +24,4 @@ struct CountDownTimer: View {
 
 #Preview {
     CountDownTimer(timeRemaining: .constant(15))
-    
 }

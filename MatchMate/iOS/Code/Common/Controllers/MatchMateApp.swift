@@ -10,16 +10,10 @@ import SwiftData
 
 @main
 struct MatchMateApp: App {
-    
-   
     var body: some Scene {
         WindowGroup {
-            
             MainView()
-                .modelContainer(for :[Players.self])
-            
-            
-               
+                .modelContainer(for: [Players.self])
         }
     }
 }

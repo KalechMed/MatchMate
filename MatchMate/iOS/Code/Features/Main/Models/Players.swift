@@ -10,14 +10,11 @@ import SwiftData
 
 @Model
 class Players {
-    
-    var Score : Int
-    var attempts : Int
-    var gameTime : Int
-
-    
-    init(Score: Int, attempts: Int, gameTime: Int) {
-        self.Score = Score
+    var score: Int
+    var attempts: Int
+    var gameTime: Int
+    init(score: Int, attempts: Int, gameTime: Int) {
+        self.score = score
         self.attempts = attempts
         self.gameTime = gameTime
     }

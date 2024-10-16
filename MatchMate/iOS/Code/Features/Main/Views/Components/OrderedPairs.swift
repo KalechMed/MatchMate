@@ -8,25 +8,15 @@
 import SwiftUI
 
 struct OrderedPairs: View {
-    
-    // Mark: - Variables
-
+    // MARK: - Variables
     let items: [String]
-    
-    
-    // Mark: - Views
-    
+    // MARK: - Views
     var body: some View {
-       
-            
-                
-        ZStack()
-        {
+        ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .foregroundColor(Color("Box"))
-                .frame(width: 360 ,height: 200)
-            
-            VStack(alignment: .center , spacing: 20) {
+                .frame(width: 360, height: 200)
+            VStack(alignment: .center, spacing: 20) {
                 HStack {
                     ForEach(items.prefix(6), id: \.self) { item in
                         Image(item)
@@ -38,15 +28,11 @@ struct OrderedPairs: View {
                             .draggable(item)
                             .fixedSize()
                         if items.firstIndex(of: item)! % 2 == 1 {
-                            
                             Spacer().frame(width: 10)
-                           
                         }
                     }
                 }
-                
-                
-                HStack() {
+                HStack {
                     ForEach(items.dropFirst(6), id: \.self) { item in
                         Image(item)
                             .resizable()
@@ -57,18 +43,13 @@ struct OrderedPairs: View {
                             .draggable(item)
                             .fixedSize()
                         if items.firstIndex(of: item)! % 2 == 1 {
-                            
                             Spacer().frame(width: 10)
-                            
                         }
-                        
-                        
                     }
                 }
             }
-            .padding(.leading,14)
+            .padding(.leading, 14)
             .padding(30)
-            
         }
     }
 }

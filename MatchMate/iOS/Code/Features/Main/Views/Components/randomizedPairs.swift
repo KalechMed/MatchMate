@@ -7,27 +7,16 @@
 
 import SwiftUI
 
-
-
-struct randomizedPairs: View {
-    
-    // Mark: - Variables
-    
+struct RandomizedPairs: View {
+    // MARK: - Variables
     let randomizedList: [String] = getSavedRandomizedList() ?? []
-   
-    
-    // Mark: - Views
-    
+    // MARK: - Views
     var body: some View {
-        
-        
-        ZStack()
-        {
+        ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .foregroundColor(Color("Box"))
-                .frame(width: 360 ,height: 200)
-            
-            VStack(alignment: .center,spacing: 20) {
+                .frame(width: 360, height: 200)
+            VStack(alignment: .center, spacing: 20) {
                 HStack {
                     ForEach(randomizedList.prefix(6), id: \.self) { item in
                         Image(item)
@@ -38,17 +27,12 @@ struct randomizedPairs: View {
                             .shadow(radius: 1, x: 1, y: 1)
                             .fixedSize()
                         if randomizedList.firstIndex(of: item)! % 2 == 1 {
-                            HStack()
-                            {
-                                
-                            }
-                            .frame(width: 10)
+                            Spacer()
+                                .frame(width: 10)
                         }
                     }
                 }
-                
-                
-                HStack() {
+                HStack {
                     ForEach(randomizedList.dropFirst(6), id: \.self) { item in
                         Image(item)
                             .resizable()
@@ -57,33 +41,19 @@ struct randomizedPairs: View {
                             .cornerRadius(8)
                             .shadow(radius: 1, x: 1, y: 1)
                             .fixedSize()
-                        
                         if randomizedList.firstIndex(of: item)! % 2 == 1 {
-                            HStack()
-                            {
-                                
-                            }
-                            .frame(width: 10)
+                            Spacer()
+                                .frame(width: 10)
                         }
                     }
                 }
-                
             }
-            .padding(.leading,14)
+            .padding(.leading, 14)
             .padding(30)
-            
-           
-           
         }
-            
-        
-        
-        
-        
     }
 }
 
-
 #Preview {
-    randomizedPairs()
+    RandomizedPairs()
 }

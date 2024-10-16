@@ -8,26 +8,20 @@
 import SwiftUI
 
 struct TryAlertView: View {
-    
-    // Mark: - Variables
-    
+    // MARK: - Variables
     @Binding var show: Bool
-    
-    // Mark: - Views
-    
+    // MARK: - Views
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
             VStack(alignment: .center, spacing: 48) {
                 GifManager("try")
                     .frame(width: 160, height: 160)
-                
                 VStack(spacing: 20) {
                     Text("Close, but Not Quite")
-                        .font(Bobaland.Regular.font(size: 28))
+                        .font(Bobaland.regular.font(size: 28))
                         .foregroundColor(.black)
-                    
                     Text("Don't worry you got other attempts")
-                        .font(Bobaland.Regular.font(size: 20))
+                        .font(Bobaland.regular.font(size: 20))
                         .foregroundColor(Color("GrayTxt"))
                         .frame(maxWidth: 300)
                 }

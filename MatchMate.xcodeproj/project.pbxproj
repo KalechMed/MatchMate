@@ -15,7 +15,7 @@
 		D909C46C2AC064D6005420F2 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909C46B2AC064D6005420F2 /* FontManager.swift */; };
 		D909C4752AC06B71005420F2 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909C4742AC06B71005420F2 /* Card.swift */; };
 		D909C4772AC06D24005420F2 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909C4762AC06D24005420F2 /* GameViewModel.swift */; };
-		D909C4792AC07637005420F2 /* RandomizingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909C4782AC07637005420F2 /* RandomizingTests.swift */; };
+		D909C4792AC07637005420F2 /* calculateScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909C4782AC07637005420F2 /* calculateScoreTests.swift */; };
 		D92876D92AD5FD2A005034BD /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92876D82AD5FD2A005034BD /* AudioManager.swift */; };
 		D92876DD2AD6073F005034BD /* Background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D92876DB2AD6073F005034BD /* Background.mp3 */; };
 		D92876DE2AD6073F005034BD /* GameOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D92876DC2AD6073F005034BD /* GameOver.mp3 */; };
@@ -65,22 +65,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D909C4302ABF3CF2005420F2 /* MatchMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D909C4332ABF3CF2005420F2 /* MatchMateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMateApp.swift; sourceTree = "<group>"; };
 		D909C4372ABF3CF5005420F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D909C43A2ABF3CF5005420F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D909C4402ABF3CF5005420F2 /* MatchMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatchMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D909C44A2ABF3CF5005420F2 /* MatchMateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatchMateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D909C44E2ABF3CF5005420F2 /* MatchMateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMateUITests.swift; sourceTree = "<group>"; };
 		D909C4502ABF3CF5005420F2 /* MatchMateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMateUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D909C4692ABF4138005420F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D909C46B2AC064D6005420F2 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		D909C4742AC06B71005420F2 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		D909C4762AC06D24005420F2 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
-		D909C4782AC07637005420F2 /* RandomizingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizingTests.swift; sourceTree = "<group>"; };
+		D909C4782AC07637005420F2 /* calculateScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculateScoreTests.swift; sourceTree = "<group>"; };
 		D92876D82AD5FD2A005034BD /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		D92876DB2AD6073F005034BD /* Background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Background.mp3; sourceTree = "<group>"; };
 		D92876DC2AD6073F005034BD /* GameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GameOver.mp3; sourceTree = "<group>"; };
+		D93AB4ED2B206D660026F736 /* MatchMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D93AB4EE2B206D660026F736 /* MatchMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatchMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D93AB4EF2B206D660026F736 /* MatchMateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatchMateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D94353112AC59D5C00E327B6 /* ScreenTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimer.swift; sourceTree = "<group>"; };
 		D97E43332AD4614A00FA52DE /* LoseAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseAlertView.swift; sourceTree = "<group>"; };
 		D98A01872AC081D6004DE6CB /* CountDownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownTimer.swift; sourceTree = "<group>"; };
@@ -138,18 +138,10 @@
 			isa = PBXGroup;
 			children = (
 				D909C4322ABF3CF2005420F2 /* MatchMate */,
-				D909C4312ABF3CF2005420F2 /* Products */,
+				D93AB4ED2B206D660026F736 /* MatchMate.app */,
+				D93AB4EE2B206D660026F736 /* MatchMateTests.xctest */,
+				D93AB4EF2B206D660026F736 /* MatchMateUITests.xctest */,
 			);
-			sourceTree = "<group>";
-		};
-		D909C4312ABF3CF2005420F2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D909C4302ABF3CF2005420F2 /* MatchMate.app */,
-				D909C4402ABF3CF5005420F2 /* MatchMateTests.xctest */,
-				D909C44A2ABF3CF5005420F2 /* MatchMateUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		D909C4322ABF3CF2005420F2 /* MatchMate */ = {
@@ -171,7 +163,7 @@
 		D909C4432ABF3CF5005420F2 /* MatchMateTests */ = {
 			isa = PBXGroup;
 			children = (
-				D909C4782AC07637005420F2 /* RandomizingTests.swift */,
+				D909C4782AC07637005420F2 /* calculateScoreTests.swift */,
 			);
 			path = MatchMateTests;
 			sourceTree = "<group>";
@@ -375,6 +367,7 @@
 				D909C42C2ABF3CF2005420F2 /* Sources */,
 				D909C42D2ABF3CF2005420F2 /* Frameworks */,
 				D909C42E2ABF3CF2005420F2 /* Resources */,
+				D969EB0F2CC0139C008E63E7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -385,7 +378,7 @@
 				D98A01932AC0D5A9004DE6CB /* Algorithms */,
 			);
 			productName = MatchMate;
-			productReference = D909C4302ABF3CF2005420F2 /* MatchMate.app */;
+			productReference = D93AB4ED2B206D660026F736 /* MatchMate.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D909C43F2ABF3CF5005420F2 /* MatchMateTests */ = {
@@ -403,7 +396,7 @@
 			);
 			name = MatchMateTests;
 			productName = MatchMateTests;
-			productReference = D909C4402ABF3CF5005420F2 /* MatchMateTests.xctest */;
+			productReference = D93AB4EE2B206D660026F736 /* MatchMateTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		D909C4492ABF3CF5005420F2 /* MatchMateUITests */ = {
@@ -421,7 +414,7 @@
 			);
 			name = MatchMateUITests;
 			productName = MatchMateUITests;
-			productReference = D909C44A2ABF3CF5005420F2 /* MatchMateUITests.xctest */;
+			productReference = D93AB4EF2B206D660026F736 /* MatchMateUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -459,7 +452,7 @@
 			packageReferences = (
 				D98A01922AC0D5A9004DE6CB /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
-			productRefGroup = D909C4312ABF3CF2005420F2 /* Products */;
+			productRefGroup = D909C4272ABF3CF2005420F2;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -505,6 +498,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D969EB0F2CC0139C008E63E7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D909C42C2ABF3CF2005420F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -540,7 +553,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D909C4792AC07637005420F2 /* RandomizingTests.swift in Sources */,
+				D909C4792AC07637005420F2 /* calculateScoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,7 +709,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MatchMate/iOS/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = AV6QJ2F83C;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MatchMate/iOS/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -725,7 +740,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MatchMate/iOS/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = AV6QJ2F83C;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MatchMate/iOS/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

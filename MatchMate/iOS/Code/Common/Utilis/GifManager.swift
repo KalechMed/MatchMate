@@ -28,9 +28,7 @@ struct GifManager: UIViewRepresentable {
                webView.scrollView.isScrollEnabled = false
 
                return webView
-           
        }
-    
     func updateUIView(_ uiView: WKWebView, context: Context) {
             uiView.reload()
         }
