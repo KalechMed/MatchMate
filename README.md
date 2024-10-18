@@ -9,9 +9,9 @@
 
 <div style="display: flex; justify-content: space-around;">
 
+<img src="screenshots/screenshot7.png" alt="Screenshot 7" width="30%" />
 <img src="screenshots/screenshot1.png" alt="Screenshot 1" width="30%" />
 <img src="screenshots/screenshot2.png" alt="Screenshot 2" width="30%" />
-<img src="screenshots/screenshot3.png" alt="Screenshot 3" width="30%" />
 
 </div>
 
@@ -19,13 +19,14 @@
 
 <img src="screenshots/screenshot4.png" alt="Screenshot 4" width="30%" />
 <img src="screenshots/screenshot5.png" alt="Screenshot 5" width="30%" />
-<img src="screenshots/screenshot6.png" alt="Screenshot 6" width="30%" />
+<img src="screenshots/screenshot3.png" alt="Screenshot 3" width="30%" />
+
 
 </div>
 
 <div style="display: flex; justify-content: space-around;">
 
-<img src="screenshots/screenshot7.png" alt="Screenshot 7" width="30%" />
+<img src="screenshots/screenshot6.png" alt="Screenshot 6" width="30%" />
 
 </div>
 
