@@ -5,6 +5,25 @@
 
 **MatchMate** is an engaging memory game that challenges your recollection skills. Match pairs of cards by moving them to the right place, and aim to complete the game with the fewest moves and the fastest time.
 
+
+## Features
+- Interactive memory card matching game.
+- Track your fastest time and moves.
+- Engaging, easy-to-understand interface.
+- Real-time feedback on your performance.
+
+## Tools & Technologies
+| Tool            | Description                                   |
+|-----------------|-----------------------------------------------|
+| **Swift**       | Main programming language                     |
+| **SwiftUI**     | User interface design                         |
+| **SwiftData**   | Data persistence and management               |
+| **XCTest**      | Unit testing for the app's logic              |
+| **CocoaPods**   | Dependency management                         |
+| **WebKit**      | Display GIFs within the app                   |
+| **AVFoundation**| Audio-visual functionalities                  |
+| **SwiftLint**   | Linter to enforce Swift style and conventions |
+
 ## Screenshots
 
 <div style="display: flex; justify-content: space-around;">
@@ -31,25 +50,6 @@
 </div>
 
 *These screenshots showcase various features of the MatchMate app.*
-
-
-## Features
-- Interactive memory card matching game.
-- Track your fastest time and moves.
-- Engaging, easy-to-understand interface.
-- Real-time feedback on your performance.
-
-## Tools & Technologies
-| Tool            | Description                                   |
-|-----------------|-----------------------------------------------|
-| **Swift**       | Main programming language                     |
-| **SwiftUI**     | User interface design                         |
-| **SwiftData**   | Data persistence and management               |
-| **XCTest**      | Unit testing for the app's logic              |
-| **CocoaPods**   | Dependency management                         |
-| **WebKit**      | Display GIFs within the app                   |
-| **AVFoundation**| Audio-visual functionalities                  |
-| **SwiftLint**   | Linter to enforce Swift style and conventions |
 
 ## Installation
 1. Clone the repository:
